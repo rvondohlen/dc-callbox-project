@@ -1,0 +1,138 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.0092785358429,
+                    38.9140227500927,
+                    18
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "P & F",
+                "title": "Call Box 1",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.0048850774765,
+                    38.91114680789475,
+                    18
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "P",
+                "title": "Call Box 2",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.02592968940735,
+                    38.89729139850068,
+                    18
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "P",
+                "title": "Call Box 3",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.00677335262297,
+                    38.883312187116985,
+                    18
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "?",
+                "title": "Call Box 4",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+            
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.01888888888888,
+                    38.909588888888888,
+                    18
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "?",
+                "title": "Call Box 5",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -77.056642,
+                    38.916617,
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "?",
+                "title": "Call Box 6",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        }
+    ],
+    "id": "rvondohlen.ged68j1b",
+    "type": "FeatureCollection"
+}
