@@ -13,7 +13,14 @@
             },
             "properties": {
                 "description": "P & F",
-                "title": "Call Box 1"
+                "title": "Call Box 1",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
         },
         {
@@ -27,7 +34,14 @@
             },
             "properties": {
                 "description": "P",
-                "title": "Call Box 2"
+                "title": "Call Box 2",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
         },
         {
@@ -41,7 +55,14 @@
             },
             "properties": {
                 "description": "P",
-                "title": "Call Box 3"
+                "title": "Call Box 3",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
         },
         {
@@ -56,7 +77,14 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 4"
+                "title": "Call Box 4",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
             
         },
@@ -71,7 +99,14 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 5"
+                "title": "Call Box 5",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
         },
         {
@@ -85,7 +120,14 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 6"
+                "title": "Call Box 6",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
             }
         }
     ]
