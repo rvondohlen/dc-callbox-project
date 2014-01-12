@@ -1,4 +1,4 @@
-{
+{ "type": "FeatureCollection",
     "features": [
         {
             "type": "Feature",
@@ -132,7 +132,5 @@
                 }
             }
         }
-    ],
-    "id": "rvondohlen.ged68j1b",
-    "type": "FeatureCollection"
+    ]
 }
