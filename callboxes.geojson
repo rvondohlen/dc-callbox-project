@@ -199,7 +199,7 @@
                 "type": "Point",
                 "coordinates": [
                     -77.015979,
-                    38.89621
+                    38.896210
                 ]
             },
             "properties": {
@@ -213,6 +213,49 @@
                     "className": "dot"
                 }
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.027167,
+                    38.898448
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "11th St. NW & G St NW",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.994659,
+                    38.921857
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "Rhode Island Ave. & 8th Pl. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
         }
+
     ]
 }
