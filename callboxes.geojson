@@ -129,6 +129,90 @@
                     "className": "dot"
                 }
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.003572,
+                    38.916218
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "Todd Pl. NE & 2nd St. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.005261,
+                    38.918002
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "Rhode Island Ave. & Summit Pl. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.021811,
+                    38.900781
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "7th St. NW & I St. NW",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.015979,
+                    38.89621
+                ]
+            },
+            "properties": {
+                "description": "?",
+                "title": "4th St. NW & E St. NW",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
         }
     ]
 }
