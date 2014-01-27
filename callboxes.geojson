@@ -12,7 +12,7 @@
                 
             },
             "properties": {
-                "description": "P & F",
+                "description": "Police & Fire",
                 "title": "Call Box 1",
                 "icon": {
                     "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
@@ -33,7 +33,7 @@
                 ]
             },
             "properties": {
-                "description": "P",
+                "description": "Police",
                 "title": "Call Box 2",
                 "icon": {
                     "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
@@ -54,7 +54,7 @@
                 ]
             },
             "properties": {
-                "description": "P",
+                "description": "Police",
                 "title": "Call Box 3",
                 "icon": {
                     "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
@@ -255,6 +255,189 @@
                     "className": "dot"
                 }
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.996299,
+                    38.901279
+                ]
+            },
+            "properties": {
+                "description": "Only base remains",
+                "title": "7th St. NE & I St. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.999414,
+                    38.891936
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "5th St. NE & Constitution Ave. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.996110,
+                    38.889697
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "7th St. NE & East Capitol St. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.988130,
+                    38.892135
+                ]
+            },
+            "properties": {
+                "description": "Police & Fire",
+                "title": "13th St. NE & Tennessee Ave. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.988376,
+                    38.901239
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "13th St. NE & I St. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.990057,
+                    38.902776
+                ]
+            },
+            "properties": {
+                "description": "Fire with special plaque",
+                "title": "Florida Ave. NE & Montello Ave. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.999425,
+                    38.906574
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "Florida Ave. NE & 5th St. NE",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.029524,
+                    38.915517
+                ]
+            },
+            "properties": {
+                "description": "Police",
+                "title": "13th St. NW & T St. NW",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.029748,
+                    38.907339
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "13th St. NW & N St. NW",
+                "icon": {
+                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
+                    "iconSize": [30, 30],
+                    "iconAnchor": [15, 15],
+                    "popupAnchor": [0, -55],
+                    "className": "dot"
+                }
         }
 
     ]
