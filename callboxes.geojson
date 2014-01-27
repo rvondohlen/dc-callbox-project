@@ -338,6 +338,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         },
         {
             "type": "Feature",
@@ -358,6 +359,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         },
         {
             "type": "Feature",
@@ -378,6 +380,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         },
         {
             "type": "Feature",
@@ -398,6 +401,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         },
         {
             "type": "Feature",
@@ -418,6 +422,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         },
         {
             "type": "Feature",
@@ -438,6 +443,7 @@
                     "popupAnchor": [0, -55],
                     "className": "dot"
                 }
+            }
         }
 
     ]
