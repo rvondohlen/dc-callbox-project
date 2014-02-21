@@ -297,7 +297,48 @@
                 "description": "Fire",
                 "title": "13th St. NW & N St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.012103,
+                    38.911028
+                ]
+            },
+            "properties": {
+                "description": "Police",
+                "title": "Q St. NW & First St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.046705,
+                    38.912528
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "R St. NW & 21st St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.025958,
+                    38.915519
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "T St. NW & Vermont Ave. NW"
+            }
         }
-
     ]
 }
