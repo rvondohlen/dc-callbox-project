@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>The District Callbox Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+
+  <style type='text/css'>
+    body {
+      font-family: Helvetica, Arial, sans;
+    }
+
+    h1 {
+      color: #999;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    #map {
+      width: 1100px;
+      height: 600px;
+    }
+
+    .container {
+      width: 1100px;
+      margin: 10px auto;
+    }
+
+    .wax-legend {
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+  <h1>The District Callbox Project</h1>
+  <p>A map of many existing callboxes located throughout the district.</p>
+</div>
+<div id='map'></div>
+
+<script type="text/javascript">
+
+// attributes for each marker
+var myIcon = L.icon({
+  iconUrl: 'marker.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+  // distance of tooltip from anchor
+  popupAnchor: [0, -15]
+});
+
+// creates map from .mbtiles file
+// actually points to a file inside of that .mbtiles file
+// enabled by tileserver.php, loading nessesary tiles as needed
+var map = L.mapbox.map('map', 'server/dc-callbox-project.tilejson');
+
+// adding marker layer to map tiles
+var featureLayer = L.mapbox.featureLayer()
+  .addTo(map);
+    
+// referencing above attributes for marker styles 
+featureLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    marker.setIcon(myIcon);
+});
+
+//hover functionality for marker tooltips
+featureLayer.on('mouseover', function(e) {
+    e.layer.openPopup();
+});
+featureLayer.on('mouseout', function(e) {
+    e.layer.closePopup();
+});
+
+// makes the .geojson the reference for the marker layer
+featureLayer.loadURL('server/callboxes.geojson')
+
+</script>
+</div>
+</body>
+</html>

@@ -13,14 +13,7 @@
             },
             "properties": {
                 "description": "Police & Fire",
-                "title": "Call Box 1",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 1"
             }
         },
         {
@@ -34,14 +27,7 @@
             },
             "properties": {
                 "description": "Police",
-                "title": "Call Box 2",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 2"
             }
         },
         {
@@ -55,14 +41,7 @@
             },
             "properties": {
                 "description": "Police",
-                "title": "Call Box 3",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 3"
             }
         },
         {
@@ -77,14 +56,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 4",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 4"
             }
             
         },
@@ -99,14 +71,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 5",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 5"
             }
         },
         {
@@ -120,14 +85,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Call Box 6",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Call Box 6"
             }
         },
         {
@@ -141,14 +99,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Todd Pl. NE & 2nd St. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Todd Pl. NE & 2nd St. NE"
             }
         },
         {
@@ -162,14 +113,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Rhode Island Ave. & Summit Pl. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Rhode Island Ave. & Summit Pl. NE"
             }
         },
         {
@@ -183,14 +127,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "7th St. NW & I St. NW",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "7th St. NW & I St. NW"
             }
         },
         {
@@ -204,14 +141,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "4th St. NW & E St. NW",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "4th St. NW & E St. NW"
             }
         },
         {
@@ -225,14 +155,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "11th St. NW & G St NW",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "11th St. NW & G St NW"
             }
         },
         {
@@ -246,14 +169,7 @@
             },
             "properties": {
                 "description": "?",
-                "title": "Rhode Island Ave. & 8th Pl. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Rhode Island Ave. & 8th Pl. NE"
             }
         },
         {
@@ -267,14 +183,7 @@
             },
             "properties": {
                 "description": "Only base remains",
-                "title": "7th St. NE & I St. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "7th St. NE & I St. NE"
             }
         },
         {
@@ -288,14 +197,7 @@
             },
             "properties": {
                 "description": "Fire",
-                "title": "5th St. NE & Constitution Ave. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "5th St. NE & Constitution Ave. NE"
             }
         },
         {
@@ -309,14 +211,7 @@
             },
             "properties": {
                 "description": "Fire",
-                "title": "7th St. NE & East Capitol St. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "7th St. NE & East Capitol St. NE"
             }
         },
         {
@@ -330,14 +225,7 @@
             },
             "properties": {
                 "description": "Police & Fire",
-                "title": "13th St. NE & Tennessee Ave. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "13th St. NE & Tennessee Ave. NE"
             }
         },
         {
@@ -351,14 +239,7 @@
             },
             "properties": {
                 "description": "Fire",
-                "title": "13th St. NE & I St. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "13th St. NE & I St. NE"
             }
         },
         {
@@ -372,14 +253,7 @@
             },
             "properties": {
                 "description": "Fire with special plaque",
-                "title": "Florida Ave. NE & Montello Ave. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Florida Ave. NE & Montello Ave. NE"
             }
         },
         {
@@ -393,14 +267,7 @@
             },
             "properties": {
                 "description": "Fire",
-                "title": "Florida Ave. NE & 5th St. NE",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "Florida Ave. NE & 5th St. NE"
             }
         },
         {
@@ -414,14 +281,7 @@
             },
             "properties": {
                 "description": "Police",
-                "title": "13th St. NW & T St. NW",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "13th St. NW & T St. NW"
             }
         },
         {
@@ -435,14 +295,7 @@
             },
             "properties": {
                 "description": "Fire",
-                "title": "13th St. NW & N St. NW",
-                "icon": {
-                    "iconUrl": "https://dl.dropboxusercontent.com/u/15495052/callboxes/img/marker.png",
-                    "iconSize": [30, 30],
-                    "iconAnchor": [15, 15],
-                    "popupAnchor": [0, -55],
-                    "className": "dot"
-                }
+                "title": "13th St. NW & N St. NW"
             }
         }
 
