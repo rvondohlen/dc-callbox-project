@@ -339,6 +339,20 @@
                 "description": "Fire",
                 "title": "T St. NW & Vermont Ave. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.018912,
+                    38.907948
+                ]
+            },
+            "properties": {
+                "description": "Police",
+                "title": "5th St. NW"
+            }
         }
     ]
 }
