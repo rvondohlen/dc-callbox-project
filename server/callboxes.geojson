@@ -353,6 +353,20 @@
                 "description": "Police",
                 "title": "5th St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.018988,
+                    38.905732
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "5th St. NW & M St. NW"
+            }
         }
     ]
 }
