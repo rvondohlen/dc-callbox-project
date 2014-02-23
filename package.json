@@ -1,0 +1,9 @@
+{
+	"name": "callboxes",
+	"version": "0.0.1",
+	"devDependencies": {
+		"grunt": "0.4.1",
+		"grunt-contrib-sass": "0.4.1",
+		"grunt-contrib-watch": "0.5.1"
+	}
+}
