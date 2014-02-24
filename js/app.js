@@ -34,4 +34,4 @@ featureLayer.on('mouseout', function(e) {
 });
 
 // makes the .geojson the reference for the marker layer
-featureLayer.loadURL('server/callboxes.geojson')
+featureLayer.loadURL('callboxes.geojson')
