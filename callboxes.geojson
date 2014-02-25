@@ -395,6 +395,20 @@
                 "description": "Police",
                 "title": "6th St. NW & R St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.04357,
+                    38.90897
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "Dupont Circle NW & 19th St. NW"
+            }
         }
     ]
 }
