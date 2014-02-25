@@ -409,6 +409,20 @@
                 "description": "Fire",
                 "title": "Dupont Circle NW & 19th St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.04487,
+                    38.90258
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "20th St. NW & K St. NW"
+            }
         }
     ]
 }
