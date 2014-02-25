@@ -367,6 +367,34 @@
                 "description": "Fire",
                 "title": "5th St. NW & M St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.01987,
+                    38.91259
+                ]
+            },
+            "properties": {
+                "description": "Police",
+                "title": "6th St. NW & R St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.00913,
+                    38.91074
+                ]
+            },
+            "properties": {
+                "description": "Police",
+                "title": "6th St. NW & R St. NW"
+            }
         }
     ]
 }
