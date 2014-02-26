@@ -423,6 +423,104 @@
                 "description": "Fire",
                 "title": "20th St. NW & K St. NW"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.044799,
+                    38.895963
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "20th St. NW & E St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.05470,
+                    38.90523
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "26th St. NW & M St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.05921,
+                    38.90520
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "30th St. NW & M St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.06283,
+                    38.90511
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "M St. NW & Wisconsin Ave. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.06306,
+                    38.90680
+                ]
+            },
+            "properties": {
+                "description": "Large",
+                "title": "N St. NW & Wisconsin Ave. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.06519,
+                    38.90510
+                ]
+            },
+            "properties": {
+                "description": "Fire",
+                "title": "M St. NW & Potomac St. NW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.04356,
+                    38.89737
+                ]
+            },
+            "properties": {
+                "description": "Large",
+                "title": "19th St. NW & F St. NW"
+            }
         }
     ]
 }
