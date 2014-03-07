@@ -1,11 +1,19 @@
 
 // attributes for each marker
-var myIcon = L.icon({
-  iconUrl: 'images/marker.png',
-  iconSize: [30, 30],
-  iconAnchor: [15, 15],
+var fireIcon = L.icon({
+  iconUrl: 'images/marker-f.png',
+  iconSize: [19, 25],
+  iconAnchor: [9.5, 25],
   // distance of tooltip from anchor
-  popupAnchor: [0, -15]
+  popupAnchor: [0,-25]
+});
+
+var policeIcon = L.icon({
+  iconUrl: 'images/marker-p.png',
+  iconSize: [19, 25],
+  iconAnchor: [9.5, 25],
+  // distance of tooltip from anchor
+  popupAnchor: [0,-25]
 });
 
 // creates map from .mbtiles file
@@ -20,9 +28,12 @@ var featureLayer = L.mapbox.featureLayer()
 // referencing above attributes for marker styles 
 featureLayer.on('layeradd', function(e) {
     var marker = e.layer,
-        feature = marker.feature;
+    var feature = ma2rker.feature;
 
-    marker.setIcon(myIcon);
+    if( feature.properties.description === 'Police'){
+      marker.setIcon(policeIcon);
+    }
+    else{marker.setIcon(fireIcon);}
 });
 
 //hover functionality for marker tooltips
