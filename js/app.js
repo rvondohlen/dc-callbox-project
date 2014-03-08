@@ -28,7 +28,7 @@ var featureLayer = L.mapbox.featureLayer()
 // referencing above attributes for marker styles 
 featureLayer.on('layeradd', function(e) {
     var marker = e.layer,
-    var feature = ma2rker.feature;
+     feature = marker.feature;
 
     if( feature.properties.description === 'Police'){
       marker.setIcon(policeIcon);
