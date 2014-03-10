@@ -3,8 +3,8 @@ html {
 
 body {
   height: 99.9%;
-  background-color: #f9f9eb;
-  font-size: 100%;
+  background-color: #d1d1c3;
+  font-size: 50%;
   font-family: Raleway;
   text-overflow: hidden;
   text-align: center;
@@ -25,7 +25,8 @@ body {
   width: 100%;
   height: 100%;
   margin-bottom: 20px;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #f9f9eb; }
 
 .fancy-border {
   margin: 2px;

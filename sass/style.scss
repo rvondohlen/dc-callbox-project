@@ -2,6 +2,7 @@
 
 	// Colors
 	$off-white: rgb(249, 249, 235);
+	$darker-white: rgb(209, 209, 195);
 	$black: rgb(50, 49, 38);
 	$white: #fff;
 	$red: #EB6142;
@@ -14,13 +15,14 @@ html {
 
 body {
 	height:99.9%;
-	background-color: $off-white;
-	font-size:100%;
+	background-color: $darker-white;
+	font-size:50%;
 	font-family: Raleway;
 	text-overflow: hidden;
 	text-align: center;
 	padding-bottom: 20px;
 }
+
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -41,6 +43,7 @@ body {
     height:100%; 
     margin-bottom: 20px;
     overflow:hidden;
+    background-color: $off-white;
 
 }
 
