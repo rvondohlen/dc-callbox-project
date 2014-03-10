@@ -1,7 +1,7 @@
 
 // attributes for each marker
 var fireIcon = L.icon({
-  iconUrl: 'images/marker-f.png',
+  iconUrl: 'images/marker-fire.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   // distance of tooltip from anchor
@@ -9,7 +9,7 @@ var fireIcon = L.icon({
 });
 
 var policeIcon = L.icon({
-  iconUrl: 'images/marker-p.png',
+  iconUrl: 'images/marker-police.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   // distance of tooltip from anchor

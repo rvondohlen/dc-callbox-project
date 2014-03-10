@@ -147,6 +147,14 @@ article:hover .information {
 
 .leaflet-marker-pane img {
 	opacity:0.7;
+	-webkit-transition: opacity .15s ease;
+	-moz-transition: opacity .15s ease;
+	-ms-transition: opacity .15s ease;
+	-o-transition: opacity .15s ease;
+	transition: opacity .15s ease;
+}
+.leaflet-marker-pane img:hover {
+	opacity:0.9;
 }
 
 // Typography 
