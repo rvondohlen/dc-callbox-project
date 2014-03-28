@@ -21,6 +21,11 @@ var policeIcon = L.icon({
 // enabled by tileserver.php, loading nessesary tiles as needed
 var map = L.mapbox.map('map', 'server/dc-callbox-project.tilejson');
 
+
+
+
+
+
 // adding marker layer to map tiles
 var featureLayer = L.mapbox.featureLayer()
   .addTo(map);
@@ -46,3 +51,35 @@ featureLayer.on('mouseout', function(e) {
 
 // makes the .geojson the reference for the marker layer
 featureLayer.loadURL('callboxes.geojson')
+
+
+
+
+
+// new marker creation
+
+// adding a custom add button
+var mapContainer = document.getElementById('map-container');
+
+var addButton =  document.createElement('a')
+addButton.id="add";
+addButton.innerHTML = "+";
+mapContainer.appendChild(addButton);
+
+
+
+
+addButton.onclick= function(){
+
+  var newMarker = L.marker(new L.LatLng(38.8921,-76.9582), {
+                  icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
+                  draggable: true
+              });
+
+  newMarker.bindPopup('<input type="text" id="message" /><br /><button id="save">Add</button>');
+  newMarker.addTo(map);
+  newMarker.openPopup();
+};
+
+
+
