@@ -72,7 +72,7 @@ mapContainer.appendChild(addButton);
 addButton.onclick= function(){
 
   var newMarker = L.marker(new L.LatLng(38.8921,-76.9582), {
-                  icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
+                  icon: fireIcon,
                   draggable: true
               });
 
