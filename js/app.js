@@ -76,7 +76,7 @@ addButton.onclick= function(){
                   draggable: true
               });
 
-  newMarker.bindPopup('<input type="text" id="message" /><br /><button id="save">Add</button>');
+  newMarker.bindPopup('Intersection:<br /><input type="text" label="Intersection" id="intersection" /><br /><br />Type:<br /> <input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<input type="radio" name="type" value="other">Other<br /><br /><button id="save">Save</button>');
   newMarker.addTo(map);
   newMarker.openPopup();
 };

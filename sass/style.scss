@@ -196,10 +196,10 @@ article:hover .information {
 }
 
 @-webkit-keyframes shake {
-	0% { margin-left: -11px; margin-top: -31px; }
-	33% { margin-left: -12px; margin-top: -32px; }
-	66% { margin-left: -11px; margin-top: -31px; }
-	100% { margin-left: -12px; margin-top: -30px; }
+	0% { margin-left: -10px; margin-top: -33px; }
+	33% { margin-left: -13px; margin-top: -31px; }
+	66% { margin-left: -10px; margin-top: -33px; }
+	100% { margin-left: -13px; margin-top: -29px; }
 }
 
 .leaflet-marker-pane img.leaflet-marker-draggable {
@@ -213,6 +213,11 @@ article:hover .information {
 	-webkit-transform-origin:50% 50%;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
+}
+
+.leaflet-popup-content-wrapper {
+	width: 320px;
+	text-align: left;
 }
 
 // Typography 
