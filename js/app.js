@@ -84,15 +84,15 @@ addButton.onclick= function(){
 
 // lat/long capturing
 
-function doGeo( position ) {
-    console.log("lat: " + position.coords.latitude );
-    console.log("lon: " + position.coords.longitude );
-    console.log("acc: " + position.coords.accuracy );
-}
+// function doGeo( position ) {
+//     console.log("lat: " + position.coords.latitude );
+//     console.log("lon: " + position.coords.longitude );
+//     console.log("acc: " + position.coords.accuracy );
+// }
 
-function lost(){};
+// function lost(){};
 
-navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
+// navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
 
 
 
