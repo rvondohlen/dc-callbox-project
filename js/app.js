@@ -19,7 +19,7 @@ var policeIcon = L.icon({
 // creates map from .mbtiles file
 // actually points to a file inside of that .mbtiles file
 // enabled by tileserver.php, loading nessesary tiles as needed
-var map = L.mapbox.map('map', 'server/dc-callbox-project.tilejson');
+var map = L.mapbox.map('map', 'server/dc-callbox-project-v2.tilejson');
 
 
 
