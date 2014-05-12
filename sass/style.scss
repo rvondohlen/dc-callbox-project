@@ -3,8 +3,9 @@
 	// Colors
 	$off-white: rgb(249, 249, 235);
 	$darker-white: rgb(209, 209, 195);
-	$black: rgb(50, 49, 38);
+	$black: rgb(70, 69, 58);
 	$white: #fff;
+	$trans-white: rgba(255,255,255, 0.7);
 	$red: #EB6142;
 
 
@@ -14,10 +15,11 @@ html {
 }
 
 body {
-	height:99.9%;
+	height:100%;
 	background-color: $darker-white;
 	font-size:50%;
-	font-family: Raleway;
+	font-family: Lato;
+	color: $black;
 	text-overflow: hidden;
 	text-align: center;
 	padding-bottom: 20px;
@@ -41,7 +43,7 @@ body {
 .main {
 	width: 100%;
     height:100%; 
-    margin-bottom: 20px;
+    margin-top:12px;
     overflow:hidden;
     background-color: $off-white;
 
@@ -85,9 +87,9 @@ footer {
 	}
 }
 
-section {
+section.map-container {
 	width: 100%;
-	height: 90%;
+	height: 100%;
 	margin: 0 auto;
 
 	article { 
@@ -96,13 +98,12 @@ section {
 		margin:0 auto;
 		padding:2px;
 		border:1px solid $black;
-		border-bottom:none;
+		
 	
 		>img {
 			width:100%;
 			height:100%;
 			border:2px solid $black;
-			border-bottom:1px solid $black;
 		}
 
 		.information {
@@ -121,8 +122,27 @@ section {
 	
 }
 
+section.heading {
+	position: relative;
+	bottom:83px;
+	height:70px;
+	width: 94%;
+	margin:0 auto;
+	padding-top: 9px;
+	z-index:1001;
+
+	border-radius: 2px;
+	border: 2px solid $black;
+
+	background-color: $trans-white;
+}
+
 article:hover .information {
 	background-color: $white;
+}
+
+#map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right {
+	display:none;
 }
 
 #map {
@@ -132,7 +152,6 @@ article:hover .information {
 
 	border: 2px solid $black;
 	border-radius: 2px;
-	border-bottom: none;
 }
 
 .wax-legend {
@@ -224,13 +243,14 @@ article:hover .information {
 
 h1 {
 	text-transform: uppercase ;
+	font-weight: 700;
 	letter-spacing: .1em;
 	margin: 0 0 3px 0;
-	font-size: 18px;
+	font-size: 2.1em;
 }
 
 h1.title {
-	margin-bottom:2px;
+	margin-bottom:5px;
 }
 
 h2, h3 {
@@ -245,6 +265,8 @@ h2 {
 
 h3 {
 	font-size: 7px;
+	opacity: .8;
+	margin-bottom:4px;
 }
 .marker-title,.marker-description {
 	text-transform: uppercase;
@@ -266,6 +288,7 @@ h3 {
 
 a {
 	color:inherit;
+	text-decoration: none;
 	-webkit-transition: color .25s;
 	-moz-transition: color .25s;
 	-ms-transition: color .25s;
@@ -325,7 +348,7 @@ aside.mobile {
 
 	section {
 		width: 100%;
-		height: 80%;
+		height: 1000%;
 	}
 
 	footer {

@@ -3,10 +3,11 @@ html {
 }
 
 body {
-  height: 99.9%;
+  height: 100%;
   background-color: #d1d1c3;
   font-size: 50%;
-  font-family: Raleway;
+  font-family: Lato;
+  color: #46453a;
   text-overflow: hidden;
   text-align: center;
   padding-bottom: 20px;
@@ -29,28 +30,28 @@ body {
 .main {
   width: 100%;
   height: 100%;
-  margin-bottom: 20px;
+  margin-top: 12px;
   overflow: hidden;
   background-color: #f9f9eb;
 }
 
 .fancy-border {
   margin: 2px;
-  border: 2px solid #323126;
+  border: 2px solid #46453a;
 }
 
 footer {
   height: 10%;
   width: 100%;
   padding: 2px;
-  border: 1px solid #323126;
+  border: 1px solid #46453a;
 }
 footer aside {
   height: 100%;
   letter-spacing: .1em;
   float: left;
   padding: 4px 8px 0 8px;
-  border: 2px solid #323126;
+  border: 2px solid #46453a;
 }
 footer aside.left {
   width: 25%;
@@ -67,45 +68,59 @@ footer aside.right {
   padding-top: 6px;
 }
 
-section {
+section.map-container {
   width: 100%;
-  height: 90%;
+  height: 100%;
   margin: 0 auto;
 }
-section article {
+section.map-container article {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding: 2px;
-  border: 1px solid #323126;
-  border-bottom: none;
+  border: 1px solid #46453a;
 }
-section article > img {
+section.map-container article > img {
   width: 100%;
   height: 100%;
-  border: 2px solid #323126;
-  border-bottom: 1px solid #323126;
+  border: 2px solid #46453a;
 }
-section article .information {
+section.map-container article .information {
   margin-top: -3px;
-  border: 2px solid #323126;
+  border: 2px solid #46453a;
   border-top: none;
   padding: 20px 0;
   -webkit-transition: background-color .25s;
   transition: background-color .25s;
 }
 
+section.heading {
+  position: relative;
+  bottom: 83px;
+  height: 70px;
+  width: 94%;
+  margin: 0 auto;
+  padding-top: 9px;
+  z-index: 1001;
+  border-radius: 2px;
+  border: 2px solid #46453a;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 article:hover .information {
   background-color: white;
+}
+
+#map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right {
+  display: none;
 }
 
 #map {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 2px solid #323126;
+  border: 2px solid #46453a;
   border-radius: 2px;
-  border-bottom: none;
 }
 
 .wax-legend {
@@ -199,13 +214,14 @@ article:hover .information {
 
 h1 {
   text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: .1em;
   margin: 0 0 3px 0;
-  font-size: 18px;
+  font-size: 2.1em;
 }
 
 h1.title {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 h2, h3 {
@@ -220,6 +236,8 @@ h2 {
 
 h3 {
   font-size: 7px;
+  opacity: .8;
+  margin-bottom: 4px;
 }
 
 .marker-title, .marker-description {
@@ -240,6 +258,7 @@ h3 {
 
 a {
   color: inherit;
+  text-decoration: none;
   -webkit-transition: color .25s;
   transition: color .25s;
 }
@@ -296,14 +315,14 @@ aside.mobile {
 @media all and (max-width: 820px) {
   section {
     width: 100%;
-    height: 80%;
+    height: 1000%;
   }
 
   footer {
     height: 20%;
   }
   footer aside {
-    border: 2px solid #323126;
+    border: 2px solid #46453a;
   }
   footer aside.left {
     display: none;
@@ -318,7 +337,7 @@ aside.mobile {
     width: 100%;
     height: 50%;
     padding-top: 10px;
-    border: 2px solid #323126;
+    border: 2px solid #46453a;
     border-bottom: none;
   }
   footer aside.right {
