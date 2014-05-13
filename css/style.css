@@ -8,6 +8,7 @@ body {
   font-size: 12px;
   font-family: Lato;
   color: #46453a;
+  overflow: hidden;
   text-overflow: hidden;
   text-align: center;
   padding-bottom: 20px;
@@ -66,13 +67,15 @@ section.map-container article .information {
   transition: background-color .25s;
 }
 
-section.heading {
+section.heading-container {
+  width: 100%;
+}
+
+div.heading {
   position: relative;
-  bottom: 83px;
+  bottom: 100px;
   height: 70px;
-  width: 94%;
-  margin: 0 auto;
-  padding-top: 9px;
+  margin: 15px;
   z-index: 1001;
   border-radius: 2px;
   border: 2px solid #46453a;
@@ -81,13 +84,17 @@ section.heading {
 
 .project-name {
   width: 80%;
+  padding-top: 9px;
 }
 
 .more-btn {
   width: 70px;
-  height: 80%;
-  padding: 10px;
-  border-left: 1px solid #46453a;
+  height: 100%;
+  border-left: 1px solid #ddd;
+}
+.more-btn a {
+  padding: 16px 10px 0 10px;
+  display: block;
 }
 
 article:hover .information {
@@ -110,33 +117,44 @@ article:hover .information {
   display: none;
 }
 
-#add {
+#edit-toggle {
   position: fixed;
-  width: 28px;
-  height: 28px;
-  right: 22px;
-  top: 22px;
+  right: 23px;
+  top: 27px;
+  width: 200px;
+  height: 30px;
   text-align: center;
-  text-indent: -11988px;
-  line-height: 20px;
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: #fff;
-  border-radius: 3px;
-  background-image: url(http://api.tiles.mapbox.com/mapbox.js/v1.6.2/images/icons-000000.png);
-  background-origin: padding-box;
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-  background-size: 26px 260px;
+  border-radius: 2px;
+  border: 2px solid #46453a;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: Lato;
+  font-size: 0.600rem;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: .9rem;
+}
+#edit-toggle a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding-top: 5px;
+  color: #46453a;
+  font-weight: bold;
+}
+#edit-toggle a:hover {
+  color: #eb6142;
 }
 
 #add:hover {
   background-color: #f8f8f8;
   cursor: pointer;
+}
+
+.leaflet-bar {
+  border-radius: 2px;
+  border: 2px solid #46453a;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .leaflet-popup-content-wrapper {
@@ -300,16 +318,12 @@ aside.mobile {
     font-size: 10px;
   }
 
-  h2 {
+  h2, #edit-toggle {
     font-size: 0.5rem;
   }
 
   h3 {
     font-size: 0.4rem;
     margin-bottom: 6px;
-  }
-
-  section.heading {
-    padding-top: 11px;
   }
 }
