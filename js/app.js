@@ -59,7 +59,7 @@ featureLayer.loadURL('callboxes.geojson')
 // new marker creation
 
 // adding a custom add button
-var mapContainer = document.getElementById('map-container');
+var mapContainer = document.getElementById('map');
 
 var addButton =  document.createElement('a')
 addButton.id="add";
