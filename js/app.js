@@ -59,11 +59,6 @@ featureLayer.loadURL('callboxes.geojson')
 // new marker creation
 
 // adding a custom add button
-var mapContainer = document.getElementById('map');
-
-var editToggle =  document.createElement('h2')
-editToggle.id="edit-toggle";
-editToggle.innerHTML = '<a href="#">Enter editing mode &#x25B9;</a>';
 
 mapContainer.appendChild(editToggle);
 

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>The District Callbox Project</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -24,17 +26,24 @@
 				<div id='map'></div>
 			</article>
 		</section>
-		<section class="heading-container">
-			<div class="heading">
-				<div class="project-name pull-left">	
+		<section class="top-bar">
+				<div class="edit-map pull-left">
+					<a href="#">
+						<div class="icon edit-icon"></div>
+					</a>
+				</div>
+				<div class="more-info pull-right">
+					<a href="#">
+						<div class="icon info-icon"></div>
+					</a>
+				</div>
+		</section>
+		<section class="bottom-bar">
+				<div class="project-name">	
 					<h3>A historical documentation initiative</h3>
 					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
 					<h2>Washington &#8226; District of Columbia</h2>
 				</div>
-				<div class="more-btn pull-right">
-					<h2><a href="#">More info<br />&#x25BF;</a></h2>
-				</div>
-			</div>
 		</section>
 		<!-- <footer>
 			<aside class='left'>
@@ -60,5 +69,15 @@
 	
 	</div>
 	<script src='js/app.js'></script>
+ 	<script>
+// 	// #Hack to hide ios safari chrome
+// 	// When ready...
+// window.addEventListener("load",function() {
+// 	// Set a timeout...
+// 	setTimeout(function(){
+// 		// Hide the address bar!
+// 		window.scrollTo(0, 1);
+// 	}, 0);
+// });</script>
 </body>
 </html>

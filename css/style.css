@@ -41,7 +41,13 @@ body {
   border: 2px solid #46453a;
 }
 
+section {
+  width: 100%;
+  display: block;
+}
+
 section.map-container {
+  position: relative;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -53,48 +59,57 @@ section.map-container article {
   padding: 2px;
   border: 1px solid #46453a;
 }
-section.map-container article > img {
+
+.top-bar {
+  position: absolute;
+  top: 00px;
+  left: 0;
+  height: 50px;
+  margin-top: 15px;
+  z-index: 1001;
+}
+
+.edit-map, .more-info {
+  width: 75px;
+  height: 100%;
+}
+
+a {
   width: 100%;
   height: 100%;
-  border: 2px solid #46453a;
-}
-section.map-container article .information {
-  margin-top: -3px;
-  border: 2px solid #46453a;
-  border-top: none;
-  padding: 20px 0;
-  -webkit-transition: background-color .25s;
-  transition: background-color .25s;
+  display: block;
 }
 
-section.heading-container {
-  width: 100%;
+.icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 13px auto 0;
+  background-image: url("icons.png");
+  background-size: 200%;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  border: 3px solid white;
+  border-radius: 24px;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
 }
 
-div.heading {
-  position: relative;
-  bottom: 100px;
-  height: 70px;
-  margin: 15px;
+.edit-icon {
+  background-position: -24px 0;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 12px;
+  margin: 15px auto;
   z-index: 1001;
-  border-radius: 2px;
-  border: 2px solid #46453a;
-  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .project-name {
-  width: 80%;
+  width: 100%;
   padding-top: 9px;
-}
-
-.more-btn {
-  width: 70px;
-  height: 100%;
-  border-left: 1px solid #ddd;
-}
-.more-btn a {
-  padding: 16px 10px 0 10px;
-  display: block;
+  border-radius: 2px;
 }
 
 article:hover .information {
@@ -144,6 +159,10 @@ article:hover .information {
 }
 #edit-toggle a:hover {
   color: #eb6142;
+}
+
+.leaflet-control-zoom {
+  display: none;
 }
 
 #add:hover {
@@ -221,10 +240,6 @@ h1 {
   font-size: 1.3em;
 }
 
-h1.title {
-  margin-bottom: 5px;
-}
-
 h2, h3 {
   text-transform: uppercase;
   letter-spacing: .2em;
@@ -238,7 +253,6 @@ h2 {
 h3 {
   font-size: 0.500rem;
   opacity: .8;
-  margin-bottom: 4px;
 }
 
 .marker-title, .marker-description {
@@ -268,51 +282,6 @@ a:hover {
   color: #eb6142;
 }
 
-.my-legend .legend-title {
-  text-align: left;
-  margin-bottom: 8px;
-  font-weight: bold;
-  font-size: 90%;
-}
-
-.my-legend .legend-scale ul {
-  margin: 0;
-  padding: 0;
-  float: left;
-  list-style: none;
-}
-
-.my-legend .legend-scale ul li {
-  display: block;
-  float: left;
-  width: 50px;
-  margin-bottom: 6px;
-  text-align: center;
-  font-size: 80%;
-  list-style: none;
-}
-
-.my-legend ul.legend-labels li span {
-  display: block;
-  float: left;
-  height: 15px;
-  width: 50px;
-}
-
-.my-legend .legend-source {
-  font-size: 70%;
-  color: #999;
-  clear: both;
-}
-
-.my-legend a {
-  color: #777;
-}
-
-aside.mobile {
-  display: none;
-}
-
 @media all and (max-width: 620px) {
   body {
     font-size: 10px;
@@ -324,6 +293,6 @@ aside.mobile {
 
   h3 {
     font-size: 0.4rem;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
