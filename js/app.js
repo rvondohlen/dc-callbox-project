@@ -60,7 +60,7 @@ featureLayer.loadURL('callboxes.geojson')
 
 // adding a custom add button
 
-mapContainer.appendChild(editToggle);
+
 
 var addButton =  document.createElement('a')
 addButton.id="add";
@@ -68,6 +68,18 @@ addButton.innerHTML = "+";
 
 
 //mapContainer.appendChild(addButton);
+
+
+//getting center of map
+
+ var centerPos =[map.getSize().x,map.getSize().y];
+
+
+var centerLatLng =  map.containerPointToLatLng(centerPos);
+
+
+
+
 
 
 
