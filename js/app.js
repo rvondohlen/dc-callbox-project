@@ -61,31 +61,24 @@ featureLayer.loadURL('callboxes.geojson')
 // adding a custom add button
 
 
+  // var addButton =  document.createElement('a')
+  // addButton.id="add";
+  // addButton.innerHTML = "+";
 
-var addButton =  document.createElement('a')
-addButton.id="add";
-addButton.innerHTML = "+";
 
-
-//mapContainer.appendChild(addButton);
+  //mapContainer.appendChild(addButton);
 
 
 //getting center of map
 
- var centerPos =[map.getSize().x,map.getSize().y];
+   var centerPos =[map.getSize().x,map.getSize().y];
 
+  // Putting this in the console get the date I think I want:
 
-var centerLatLng =  map.containerPointToLatLng(centerPos);
+  // map.containerPointToLatLng(centerPos);
 
+  // not sure how to access the specific properties of this variable
 
-
-
-
-
-
-// var mapCenter = map.getCenter();
-
-// console.log("map center: " + mapCenter);
 
 
 
