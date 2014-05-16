@@ -16,6 +16,18 @@ var policeIcon = L.icon({
   popupAnchor: [0,-25]
 });
 
+
+// Custom method to get center of view
+
+L.Map.prototype.findViewCenter = function (latlng, offset, options) {
+    var x = this.latLngToContainerPoint(latlng).x - offset[0]
+    var y = this.latLngToContainerPoint(latlng).y - offset[1]
+    var point = this.containerPointToLatLng([x, y])
+    return point;
+}
+
+
+
 // creates map from .mbtiles file
 // actually points to a file inside of that .mbtiles file
 // enabled by tileserver.php, loading nessesary tiles as needed
@@ -50,7 +62,7 @@ featureLayer.on('mouseout', function(e) {
 });
 
 // makes the .geojson the reference for the marker layer
-featureLayer.loadURL('callboxes.geojson')
+featureLayer.loadURL('callboxes.geojson');
 
 
 
@@ -71,43 +83,43 @@ featureLayer.loadURL('callboxes.geojson')
 
 //getting center of map
 
-   var centerPos =[map.getSize().x,map.getSize().y];
+function getCenter() {
+  var coordsX = map.getSize().x/2;
+  var coordsY = map.getSize().y/2;
+   var centerPos = L.point(coordsX, coordsY);
+  var markerCoords = map.containerPointToLatLng(centerPos);
+  return markerCoords;
+}
 
-  // Putting this in the console get the date I think I want:
-
-  // map.containerPointToLatLng(centerPos);
-
-  // not sure how to access the specific properties of this variable
+//call getCenter().lat
+//     getCenter().lng
 
 
+// addButton.onclick= function(){
 
+//   var newMarker = L.marker(new L.LatLng(38.9100,-77.0000), {
+//                   icon: fireIcon,
+//                   draggable: true
+//               });
 
+//   newMarker.bindPopup('Intersection:<br /><i>e.g. 10 St. NW & G St. NW</i><br /><input type="text" label="Intersection" id="intersection" /><br /><br />Type:<br /> <input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<input type="radio" name="type" value="other">Other<br /><br /><button id="save">Save</button><a style="text-align:right; float:right;" href="#">Cancel</a>');
+//   newMarker.addTo(map);
+//   newMarker.openPopup();
 
-addButton.onclick= function(){
+//   // every time the marker is dragged, update the form
+//   newMarker.on('dragend', ondragend);
 
-  var newMarker = L.marker(new L.LatLng(38.9100,-77.0000), {
-                  icon: fireIcon,
-                  draggable: true
-              });
+//   // set the initial values in the form
+//   ondragend();
 
-  newMarker.bindPopup('Intersection:<br /><i>e.g. 10 St. NW & G St. NW</i><br /><input type="text" label="Intersection" id="intersection" /><br /><br />Type:<br /> <input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<input type="radio" name="type" value="other">Other<br /><br /><button id="save">Save</button><a style="text-align:right; float:right;" href="#">Cancel</a>');
-  newMarker.addTo(map);
-  newMarker.openPopup();
-
-  // every time the marker is dragged, update the form
-  newMarker.on('dragend', ondragend);
-
-  // set the initial values in the form
-  ondragend();
-
-  function ondragend() {
-      var ll = newMarker.getLatLng();
-      console.log(ll.lat);
-      console.log(ll.lng);
-  }
+//   function ondragend() {
+//       var ll = newMarker.getLatLng();
+//       console.log(ll.lat);
+//       console.log(ll.lng);
+//   }
      
 
-};
+// };
 
 
 // user lat/long capturing
