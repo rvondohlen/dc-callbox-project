@@ -11,7 +11,7 @@ body {
   overflow: hidden;
   text-overflow: hidden;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 5px;
 }
 
 *, *:before, *:after {
@@ -31,7 +31,6 @@ body {
 .main {
   width: 100%;
   height: 100%;
-  margin-top: 12px;
   overflow: hidden;
   background-color: #f9f9eb;
 }
@@ -60,9 +59,9 @@ section.map-container article {
   border: 1px solid #46453a;
 }
 
-.top-bar {
+.map-top-bar {
   position: absolute;
-  top: 00px;
+  top: 0;
   left: 0;
   height: 50px;
   margin-top: 15px;
@@ -230,6 +229,10 @@ article:hover .information {
 .leaflet-popup-content-wrapper {
   width: 320px;
   text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato';
 }
 
 h1 {

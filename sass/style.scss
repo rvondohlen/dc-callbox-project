@@ -23,7 +23,7 @@ body {
 	overflow:hidden;
 	text-overflow: hidden;
 	text-align: center;
-	padding-bottom: 20px;
+	padding:5px;
 }
 
 
@@ -44,7 +44,8 @@ body {
 .main {
 	width: 100%;
     height:100%; 
-    margin-top:12px;
+    
+   
     overflow:hidden;
     background-color: $off-white;
 
@@ -78,9 +79,9 @@ section.map-container {
 }
 
 
-.top-bar {
+.map-top-bar {
 	position: absolute;
-	top:00px;
+	top:0;
 	left:0;
 	height:50px;
 
@@ -309,6 +310,10 @@ article:hover .information {
 }
 
 // Typography 
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato';
+}
 
 h1 {
 	text-transform: uppercase ;
