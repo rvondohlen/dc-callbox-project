@@ -7,8 +7,8 @@
 	$white: #fff;
 	$trans-white: rgba(255,255,255, 0.7);
 	$red: #EB6142;
-	$blue: #4080D6;
-	$light-blue: #61C3F5;
+	$blue: #7095C6;
+	$light-blue: #9BCFF5;
 
 // Global styles
 html {
@@ -80,7 +80,7 @@ section.map-container {
 }
 
 
-.map-top-bar {
+.top-bar {
 	width:100%;
 	position: absolute;
 	top:0;
@@ -93,9 +93,9 @@ section.map-container {
 	z-index:1001;
 }
 
-.map-top-bar #nav-left,
-.map-top-bar #nav-center,
-.map-top-bar #nav-right {
+.top-bar #nav-left,
+.top-bar #nav-center,
+.top-bar #nav-right {
 	position:relative;
 	width:33.3%;
 	min-height: 50px;
@@ -103,14 +103,14 @@ section.map-container {
 
 }
 
-.map-top-bar #nav-left div {
+.top-bar #nav-left div {
 	float:left;
 }
-.map-top-bar #nav-center div {
+.top-bar #nav-center div {
 	
 	
 }
-.map-top-bar #nav-right div{
+.top-bar #nav-right div{
 	float:right;
 }
 
@@ -182,6 +182,16 @@ section.map-container {
 		background-position:-24px 0;
 	}
 
+.center-bar {
+	  position: fixed;
+	  width:100px;
+	  height:100px;
+	  top: 50%;
+	  left: 50%;
+	  margin-top: -50px;
+	  margin-left: -50px;
+	  opacity:.5;
+}
 
 .bottom-bar {
 	position: absolute;

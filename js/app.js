@@ -73,6 +73,9 @@ featureLayer.loadURL('callboxes.geojson');
   var navCenter = document.getElementById('nav-center');
   var navRight = document.getElementById('nav-right');
 
+  var crosshairsContainer = document.getElementById('crosshairs-container');
+
+
 
   //elements
 
@@ -93,9 +96,14 @@ featureLayer.loadURL('callboxes.geojson');
       placeBtn.innerHTML = '<a href="#" class="btn">Place</a>';
 
 
+  var crosshairs = document.createElement('img');
+      crosshairs.src = "images/crosshairs.png";
+
   var backBtn = document.createElement('div');
       backBtn.id="back-btn";
       backBtn.innerHTML = '<a href="#">Back</a>';
+
+
 
 
   // setup
@@ -115,12 +123,15 @@ featureLayer.loadURL('callboxes.geojson');
 
     navLeft.appendChild(cancelBtn);
     navCenter.appendChild(placeBtn);
+    crosshairsContainer.appendChild(crosshairs);
 
   }
   
   cancelBtn.onclick= function () {
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
+    crosshairsContainer.removeChild(crosshairs);
+
     setup();
 
   }
@@ -135,7 +146,7 @@ featureLayer.loadURL('callboxes.geojson');
     var coordsX = map.getSize().x/2;
     var coordsY = map.getSize().y/2;
     var centerPos = L.point(coordsX, coordsY);
-    var markerCoords = layerPointToLatLng(centerPos);
+    //var markerCoords = layerPointToLatLng(centerPos);
     //var markerCoords = containerPointToLatLng(centerPos);
   //   return markerCoords;
   // }

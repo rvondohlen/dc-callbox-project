@@ -59,7 +59,7 @@ section.map-container article {
   border: 1px solid #46453a;
 }
 
-.map-top-bar {
+.top-bar {
   width: 100%;
   position: absolute;
   top: 0;
@@ -70,20 +70,20 @@ section.map-container article {
   z-index: 1001;
 }
 
-.map-top-bar #nav-left,
-.map-top-bar #nav-center,
-.map-top-bar #nav-right {
+.top-bar #nav-left,
+.top-bar #nav-center,
+.top-bar #nav-right {
   position: relative;
   width: 33.3%;
   min-height: 50px;
   display: block;
 }
 
-.map-top-bar #nav-left div {
+.top-bar #nav-left div {
   float: left;
 }
 
-.map-top-bar #nav-right div {
+.top-bar #nav-right div {
   float: right;
 }
 
@@ -104,7 +104,7 @@ section.map-container article {
   width: 90px;
   height: 30px;
   padding-top: 4px;
-  background-color: #4080d6;
+  background-color: #7095c6;
   color: #f9f9eb;
   border: 3px solid white;
   border-radius: 3px;
@@ -138,6 +138,17 @@ a {
 
 .edit-icon {
   background-position: -24px 0;
+}
+
+.center-bar {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  opacity: .5;
 }
 
 .bottom-bar {
