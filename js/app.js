@@ -23,8 +23,8 @@ var map = L.mapbox.map('map', 'server/dc-callbox-project-v2.tilejson');
 
 
 // adding marker layer to map tiles
-var featureLayer = L.mapbox.featureLayer()
-  .addTo(map);
+var featureLayer = L.mapbox.featureLayer();
+  featureLayer.addTo(map);
     
 // referencing above attributes for marker styles 
 featureLayer.on('layeradd', function(e) {
@@ -131,17 +131,17 @@ featureLayer.loadURL('callboxes.geojson');
   // 2.
   //getting center of map
 
-  var getViewCenter = function() {
+  // var getViewCenter = function() {
     var coordsX = map.getSize().x/2;
     var coordsY = map.getSize().y/2;
-     var centerPos = L.point(coordsX, coordsY);
-    var markerCoords = map.containerPointToLatLng(centerPos);
-    return markerCoords;
-  }
-  //call getViewCenter().lat
-  //     getViewCenter().lng
-
-
+    var centerPos = L.point(coordsX, coordsY);
+    var markerCoords = layerPointToLatLng(centerPos);
+    //var markerCoords = containerPointToLatLng(centerPos);
+  //   return markerCoords;
+  // }
+  //call 
+  //     
+//console.log(markerCoords);
 // addButton.onclick= function(){
 
 //   var newMarker = L.marker(new L.LatLng(38.9100,-77.0000), {
