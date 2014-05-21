@@ -60,17 +60,59 @@ section.map-container article {
 }
 
 .map-top-bar {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   height: 50px;
-  margin-top: 15px;
+  padding: 0 25px;
+  margin-top: 25px;
   z-index: 1001;
 }
 
-.edit-map, .more-info {
+.map-top-bar #nav-left,
+.map-top-bar #nav-center,
+.map-top-bar #nav-right {
+  position: relative;
+  width: 33.3%;
+  min-height: 50px;
+  display: block;
+}
+
+.map-top-bar #nav-left div {
+  float: left;
+}
+
+.map-top-bar #nav-right div {
+  float: right;
+}
+
+#edit-map, #more-info {
   width: 75px;
   height: 100%;
+}
+
+#nav-center #place-btn {
+  width: 100%;
+}
+
+#place-btn a {
+  margin: 0 auto;
+}
+
+.btn {
+  width: 90px;
+  height: 30px;
+  padding-top: 4px;
+  background-color: #4080d6;
+  color: #f9f9eb;
+  border: 3px solid white;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  color: white;
+  opacity: .8;
 }
 
 a {
@@ -83,7 +125,7 @@ a {
   width: 30px;
   height: 30px;
   display: block;
-  margin: 13px auto 0;
+  margin: 0 auto;
   background-image: url("icons.png");
   background-size: 200%;
   background-repeat: no-repeat;
@@ -100,7 +142,7 @@ a {
 
 .bottom-bar {
   position: absolute;
-  bottom: 12px;
+  bottom: 8px;
   margin: 15px auto;
   z-index: 1001;
 }

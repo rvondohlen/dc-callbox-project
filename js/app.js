@@ -16,26 +16,10 @@ var policeIcon = L.icon({
   popupAnchor: [0,-25]
 });
 
-
-// Custom method to get center of view
-
-L.Map.prototype.findViewCenter = function (latlng, offset, options) {
-    var x = this.latLngToContainerPoint(latlng).x - offset[0]
-    var y = this.latLngToContainerPoint(latlng).y - offset[1]
-    var point = this.containerPointToLatLng([x, y])
-    return point;
-}
-
-
-
 // creates map from .mbtiles file
 // actually points to a file inside of that .mbtiles file
 // enabled by tileserver.php, loading nessesary tiles as needed
 var map = L.mapbox.map('map', 'server/dc-callbox-project-v2.tilejson');
-
-
-
-
 
 
 // adding marker layer to map tiles
@@ -54,45 +38,108 @@ featureLayer.on('layeradd', function(e) {
 });
 
 //hover functionality for marker tooltips
-featureLayer.on('mouseover', function(e) {
-    e.layer.openPopup();
-});
-featureLayer.on('mouseout', function(e) {
-    e.layer.closePopup();
-});
+
+// featureLayer.on('mouseover', function(e) {
+//     e.layer.openPopup();
+// });
+// featureLayer.on('mouseout', function(e) {
+//     e.layer.closePopup();
+// });
 
 // makes the .geojson the reference for the marker layer
 featureLayer.loadURL('callboxes.geojson');
 
 
 
-
-
 // new marker creation
+
+// 1. hits edit button
+//    --------------------------------
+//    shows cancel, 'place' buttons, and x mark in center of view
+
+// 2. hits 'place'
+//    ----------------------------------------------
+//    gets center of view under X, saves
+//    shows box type picker, back and 'save' buttons
+
+// 3. hits 'save'
+//    ----------------------------------------------------------------------
+//    saves data as attributes of object, pushes to tempGeoJSON and displays
+ 
 
 // adding a custom add button
 
-
-  // var addButton =  document.createElement('a')
-  // addButton.id="add";
-  // addButton.innerHTML = "+";
-
-
-  //mapContainer.appendChild(addButton);
+  var navLeft = document.getElementById('nav-left');
+  var navCenter = document.getElementById('nav-center');
+  var navRight = document.getElementById('nav-right');
 
 
-//getting center of map
+  //elements
 
-function getCenter() {
-  var coordsX = map.getSize().x/2;
-  var coordsY = map.getSize().y/2;
-   var centerPos = L.point(coordsX, coordsY);
-  var markerCoords = map.containerPointToLatLng(centerPos);
-  return markerCoords;
-}
+  var editMapBtn =  document.createElement('div');
+      editMapBtn.id="edit-map";
+      editMapBtn.innerHTML = '<a href="#"><div class="icon edit-icon"></div></a>';
 
-//call getCenter().lat
-//     getCenter().lng
+  var moreInfoBtn =  document.createElement('div');
+      moreInfoBtn.id="more-info";
+      moreInfoBtn.innerHTML = '<a href="#"><div class="icon info-icon"></div></a>';
+
+  var cancelBtn = document.createElement('div');
+      cancelBtn.id="cancel-btn";
+      cancelBtn.innerHTML = '<a href="#">Cancel</a>';
+
+  var placeBtn = document.createElement('div');
+      placeBtn.id="place-btn";
+      placeBtn.innerHTML = '<a href="#" class="btn">Place</a>';
+
+
+  var backBtn = document.createElement('div');
+      backBtn.id="back-btn";
+      backBtn.innerHTML = '<a href="#">Back</a>';
+
+
+  // setup
+  var setup= function () {
+    navLeft.appendChild(editMapBtn);
+    navRight.appendChild(moreInfoBtn);
+  }
+  setup();
+  // 1. 
+  
+
+  editMapBtn.onclick= function (){
+    console.log('entering edit mode..')
+
+    navLeft.removeChild(editMapBtn);
+    navRight.removeChild(moreInfoBtn);
+
+    navLeft.appendChild(cancelBtn);
+    navCenter.appendChild(placeBtn);
+
+  }
+  
+  cancelBtn.onclick= function () {
+    navLeft.removeChild(cancelBtn);
+    navCenter.removeChild(placeBtn);
+    setup();
+
+  }
+
+  
+
+
+  // 2.
+  //getting center of map
+
+  var getViewCenter = function() {
+    var coordsX = map.getSize().x/2;
+    var coordsY = map.getSize().y/2;
+     var centerPos = L.point(coordsX, coordsY);
+    var markerCoords = map.containerPointToLatLng(centerPos);
+    return markerCoords;
+  }
+  //call getViewCenter().lat
+  //     getViewCenter().lng
 
 
 // addButton.onclick= function(){
