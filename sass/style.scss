@@ -42,7 +42,7 @@ body {
 	float:right;
 }
 
-.main {
+#main {
 	width: 100%;
     height:100%; 
     
@@ -131,6 +131,7 @@ section.map-container {
 	width: 90px;
 	height: 30px;
 	padding-top: 4px;
+	opacity: 0.9;
 
 	background-color:$blue;
 	
@@ -144,7 +145,7 @@ section.map-container {
 
 .btn:hover {
 	color:$white;
-	opacity: .8;
+	opacity: 0.75;
 }
 
 	
@@ -182,15 +183,17 @@ section.map-container {
 		background-position:-24px 0;
 	}
 
-.center-bar {
-	  position: fixed;
-	  width:100px;
-	  height:100px;
-	  top: 50%;
-	  left: 50%;
-	  margin-top: -50px;
-	  margin-left: -50px;
-	  opacity:.5;
+#crosshairs {
+	pointer-events:none;
+	position: fixed;
+	width:100px;
+	height:100px;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	opacity:0.5;
+	background-image: url('crosshairs.png');
 }
 
 .bottom-bar {
