@@ -105,8 +105,13 @@ featureLayer.loadURL('callboxes.geojson');
       backBtn.id="back-btn";
       backBtn.innerHTML = '<a href="#">Back</a>';
 
+  var saveBtn = document.createElement('div');
+      saveBtn.id="place-btn";
+      saveBtn.innerHTML = '<a href="#" class="btn">Save</a>';
 
-
+  var formWell = document.createElement('div');
+      formWell.id="form-well";
+      formWell.innerHTML = '<form action=""><label>Intersection</label><hr><input type="text" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<br /><input type="radio" name="type" value="fancy">Fancy<input type="radio" name="type" value="broken">Broken :(</form>';
 
   // setup
   var setup= function () {
@@ -153,7 +158,31 @@ featureLayer.loadURL('callboxes.geojson');
     var markerCoords = map.containerPointToLatLng(centerPos);
     console.log(markerCoords.lat);
     console.log(markerCoords.lng);
+    
+
+    navLeft.removeChild(cancelBtn);
+    navCenter.removeChild(placeBtn);
+    main.removeChild(crosshairs);
+
+    navLeft.appendChild(backBtn);
+    navCenter.appendChild(saveBtn);
+    main.appendChild(formWell);
+
     return markerCoords;
+  }
+
+  backBtn.onclick= function () {
+
+    navLeft.removeChild(backBtn);
+    navCenter.removeChild(saveBtn);
+    main.removeChild(formWell);
+
+    navLeft.appendChild(cancelBtn);
+    navCenter.appendChild(placeBtn);
+    main.appendChild(crosshairs);
+
+    
+
   }
   //call 
   //     
