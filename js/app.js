@@ -145,13 +145,15 @@ featureLayer.loadURL('callboxes.geojson');
   //getting center of map
 
   placeBtn.onclick= function () {
+    
+
     var coordsX = map.getSize().x/2;
     var coordsY = map.getSize().y/2;
     var centerPos = L.point(coordsX, coordsY);
-    var markerCoords = map.layerPointToLatLng(centerPos);
-    //var markerCoords = containerPointToLatLng(centerPos);
+    var markerCoords = map.containerPointToLatLng(centerPos);
     console.log(markerCoords.lat);
     console.log(markerCoords.lng);
+    return markerCoords;
   }
   //call 
   //     
