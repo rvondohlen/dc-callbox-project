@@ -1,3 +1,25 @@
+//Crockford's Object.create
+
+if (typeof Object.create !== 'function') {
+    Object.create = function (o) {
+        function F() {}
+        F.prototype = o;
+        return new F();
+    };
+}
+
+var newMarker = {
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-77,39]
+    },
+    "properties": {
+        "description": "Fire",
+        "title": " "
+    }
+};
+
 
 // attributes for each marker
 var fireIcon = L.icon({
@@ -149,6 +171,8 @@ featureLayer.loadURL('callboxes.geojson');
   // 2.
   //getting center of map
 
+  var newLat;
+
   placeBtn.onclick= function () {
     
 
@@ -159,6 +183,7 @@ featureLayer.loadURL('callboxes.geojson');
     console.log(markerCoords.lat);
     console.log(markerCoords.lng);
     
+    var newLat = markerCoords.lat;
 
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
@@ -168,8 +193,16 @@ featureLayer.loadURL('callboxes.geojson');
     navCenter.appendChild(saveBtn);
     main.appendChild(formWell);
 
-    return markerCoords;
+    // var markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+
+    // return markerCoordsPoint;
+    return newLat;
+
+
+    
   }
+
+
 
   backBtn.onclick= function () {
 
@@ -180,8 +213,6 @@ featureLayer.loadURL('callboxes.geojson');
     navLeft.appendChild(cancelBtn);
     navCenter.appendChild(placeBtn);
     main.appendChild(crosshairs);
-
-    
 
   }
   //call 
