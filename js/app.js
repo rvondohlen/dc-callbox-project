@@ -119,6 +119,9 @@ featureLayer.loadURL('callboxes.geojson');
       placeBtn.id="place-btn";
       placeBtn.innerHTML = '<a href="#" class="btn">Place</a>';
 
+  var findBtn = document.createElement('div');
+      findBtn.id= "findBtn";
+      findBtn.innerHTML = '<a href="">&#8620; Find Me</a>'
 
   var crosshairs = document.createElement('div');
       crosshairs.id= "crosshairs";
@@ -133,7 +136,7 @@ featureLayer.loadURL('callboxes.geojson');
 
   var formWell = document.createElement('div');
       formWell.id="form-well";
-      formWell.innerHTML = '<form action=""><label>Intersection</label><hr><input type="text" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<br /><input type="radio" name="type" value="fancy">Fancy<input type="radio" name="type" value="broken">Broken :(</form>';
+      formWell.innerHTML = '<form action=""><label>Intersection</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire">Fire<input type="radio" name="type" value="Police">Police<br /><input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken :(</form>';
 
   // setup
   var setup= function () {
@@ -152,6 +155,7 @@ featureLayer.loadURL('callboxes.geojson');
 
     navLeft.appendChild(cancelBtn);
     navCenter.appendChild(placeBtn);
+    navRight.appendChild(findBtn);
     main.appendChild(crosshairs);
 
   }
@@ -170,13 +174,13 @@ featureLayer.loadURL('callboxes.geojson');
 
   // 2.
   //getting center of map
- var saveCoords = function () {
-      
-      
-      console.log("saveCoords has run!");
-  };
 
   var newMarker = Object.create(markerPrototype);
+
+  findBtn.onclick = function () {
+    // see below
+
+  }
 
   placeBtn.onclick= function () {
     
@@ -187,26 +191,20 @@ featureLayer.loadURL('callboxes.geojson');
     console.log(markerCoords.lat);
     console.log(markerCoords.lng);
     
-
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
+    navRight.removeChild(findBtn);
     main.removeChild(crosshairs);
 
     navLeft.appendChild(backBtn);
     navCenter.appendChild(saveBtn);
     main.appendChild(formWell);
 
-    console.log('before');
-
     markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
 
-
-    console.log('after');
-    console.log(markerCoordsPoint);
-
-    return markerCoordsPoint;
-    
     newMarker.geometry.coordinates = markerCoordsPoint;
+
+    return newMarker;
 
   }
 
@@ -225,8 +223,35 @@ featureLayer.loadURL('callboxes.geojson');
     main.appendChild(crosshairs);
 
   }
-  //call 
-  //     
+  
+  // 3. 
+
+  saveBtn.onclick= function () {
+
+    navLeft.removeChild(backBtn);
+    navCenter.removeChild(saveBtn);
+    main.removeChild(formWell);
+
+    var input = document.getElementsByName('title');
+
+    var markerTitle = input.value;
+    newMarker.properties.title = markerTitle;
+
+    var radios = document.getElementsByName('type');
+
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+          // do whatever you want with the checked radio
+          var markerType = radios[i].value;
+
+          // only one radio can be logically checked, don't check the rest
+          break;
+      }
+    }
+    newMarker.properties.description = markerType;
+    newMarker.addTo(map);
+    return newMarker;
+  }
   
 // addButton.onclick= function(){
 
@@ -257,15 +282,21 @@ featureLayer.loadURL('callboxes.geojson');
 
 // user lat/long capturing
 
-function doGeo( position ) {
+// still need to enable slide and zoom to user position.
+
+  function doGeo( position ) {
     console.log("userLat: " + position.coords.latitude );
     console.log("userLon: " + position.coords.longitude );
     console.log("positionAcc: " + position.coords.accuracy );
-}
+    
+  }
 
-function lost(){}
+  function lost(){}
+  
+  navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
 
-navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
+
+
 
 
 
