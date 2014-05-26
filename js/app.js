@@ -113,7 +113,7 @@ featureLayer.loadURL('callboxes.geojson');
 
   var cancelBtn = document.createElement('div');
       cancelBtn.id="cancel-btn";
-      cancelBtn.innerHTML = '<a href="#">Cancel</a>';
+      cancelBtn.innerHTML = '<a href="#">&#8592; Cancel</a>';
 
   var placeBtn = document.createElement('div');
       placeBtn.id="place-btn";
@@ -121,14 +121,14 @@ featureLayer.loadURL('callboxes.geojson');
 
   var findBtn = document.createElement('div');
       findBtn.id= "findBtn";
-      findBtn.innerHTML = '<a href="">&#8620; Find Me</a>'
+      findBtn.innerHTML = '<a href="#">Find Me &#8620;</a>'
 
   var crosshairs = document.createElement('div');
       crosshairs.id= "crosshairs";
 
   var backBtn = document.createElement('div');
       backBtn.id="back-btn";
-      backBtn.innerHTML = '<a href="#">Back</a>';
+      backBtn.innerHTML = '<a href="#">&#8592; Back</a>';
 
   var saveBtn = document.createElement('div');
       saveBtn.id="place-btn";
@@ -176,11 +176,21 @@ featureLayer.loadURL('callboxes.geojson');
   //getting center of map
 
   var newMarker = Object.create(markerPrototype);
+  
+  findBtn.onclick = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    map.locate();
 
-  findBtn.onclick = function () {
-    // see below
+    // if it finds that you are outside DC than it should throw an error
 
-  }
+  };
+
+  map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds);
+    navRight.removeChild(findBtn);
+
+  });
 
   placeBtn.onclick= function () {
     
@@ -284,16 +294,17 @@ featureLayer.loadURL('callboxes.geojson');
 
 // still need to enable slide and zoom to user position.
 
-  function doGeo( position ) {
-    console.log("userLat: " + position.coords.latitude );
-    console.log("userLon: " + position.coords.longitude );
-    console.log("positionAcc: " + position.coords.accuracy );
+  // function doGeo( position ) {
+  //   console.log("userLat: " + position.coords.latitude );
+  //   console.log("userLon: " + position.coords.longitude );
+  //   console.log("positionAcc: " + position.coords.accuracy );
+  //   return position;
     
-  }
+  // }
 
-  function lost(){}
+  // function lost(){}
   
-  navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
+  // navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
 
 
 
