@@ -8,7 +8,7 @@ if (typeof Object.create !== 'function') {
     };
 }
 
-var newMarker = {
+var markerPrototype = {
     "type": "Feature",
     "geometry": {
         "type": "Point",
@@ -170,12 +170,16 @@ featureLayer.loadURL('callboxes.geojson');
 
   // 2.
   //getting center of map
+ var saveCoords = function () {
+      
+      
+      console.log("saveCoords has run!");
+  };
 
-  var newLat;
+  var newMarker = Object.create(markerPrototype);
 
   placeBtn.onclick= function () {
     
-
     var coordsX = map.getSize().x/2;
     var coordsY = map.getSize().y/2;
     var centerPos = L.point(coordsX, coordsY);
@@ -183,7 +187,6 @@ featureLayer.loadURL('callboxes.geojson');
     console.log(markerCoords.lat);
     console.log(markerCoords.lng);
     
-    var newLat = markerCoords.lat;
 
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
@@ -193,14 +196,21 @@ featureLayer.loadURL('callboxes.geojson');
     navCenter.appendChild(saveBtn);
     main.appendChild(formWell);
 
-    // var markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+    console.log('before');
 
-    // return markerCoordsPoint;
-    return newLat;
+    markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
 
 
+    console.log('after');
+    console.log(markerCoordsPoint);
+
+    return markerCoordsPoint;
     
+    newMarker.geometry.coordinates = markerCoordsPoint;
+
   }
+
+
 
 
 
