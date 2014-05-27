@@ -203,7 +203,9 @@ featureLayer.loadURL('callboxes.geojson');
     
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
-    navRight.removeChild(findBtn);
+    if (findBtn.parentNode == navRight){
+      navRight.removeChild(findBtn);
+    }
     main.removeChild(crosshairs);
 
     navLeft.appendChild(backBtn);
@@ -259,7 +261,6 @@ featureLayer.loadURL('callboxes.geojson');
       }
     }
     newMarker.properties.description = markerType;
-    newMarker.addTo(map);
     return newMarker;
   }
   
