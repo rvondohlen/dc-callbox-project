@@ -136,7 +136,7 @@ featureLayer.loadURL('callboxes.geojson');
 
   var formWell = document.createElement('div');
       formWell.id="form-well";
-      formWell.innerHTML = '<form action=""><label>Intersection</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire">Fire<input type="radio" name="type" value="Police">Police<br /><input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken :(</form>';
+      formWell.innerHTML = '<form action=""><label>Intersection (optional)</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire">Fire<input type="radio" name="type" value="Police">Police<br /><input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken :(</form>';
 
   // setup
   var setup= function () {
@@ -218,6 +218,7 @@ featureLayer.loadURL('callboxes.geojson');
 
     return newMarker;
 
+
   }
 
 
@@ -237,6 +238,8 @@ featureLayer.loadURL('callboxes.geojson');
   }
   
   // 3. 
+
+  
 
   saveBtn.onclick= function () {
 
@@ -261,52 +264,20 @@ featureLayer.loadURL('callboxes.geojson');
       }
     }
     newMarker.properties.description = markerType;
-    return newMarker;
-  }
-  
-// addButton.onclick= function(){
-
-//   var newMarker = L.marker(new L.LatLng(38.9100,-77.0000), {
-//                   icon: fireIcon,
-//                   draggable: true
-//               });
-
-//   newMarker.bindPopup('Intersection:<br /><i>e.g. 10 St. NW & G St. NW</i><br /><input type="text" label="Intersection" id="intersection" /><br /><br />Type:<br /> <input type="radio" name="type" value="fire">Fire<input type="radio" name="type" value="police">Police<input type="radio" name="type" value="other">Other<br /><br /><button id="save">Save</button><a style="text-align:right; float:right;" href="#">Cancel</a>');
-//   newMarker.addTo(map);
-//   newMarker.openPopup();
-
-//   // every time the marker is dragged, update the form
-//   newMarker.on('dragend', ondragend);
-
-//   // set the initial values in the form
-//   ondragend();
-
-//   function ondragend() {
-//       var ll = newMarker.getLatLng();
-//       console.log(ll.lat);
-//       console.log(ll.lng);
-//   }
      
+    var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
+        icon: fireIcon
+    });
 
-// };
-
-
-// user lat/long capturing
-
-// still need to enable slide and zoom to user position.
-
-  // function doGeo( position ) {
-  //   console.log("userLat: " + position.coords.latitude );
-  //   console.log("userLon: " + position.coords.longitude );
-  //   console.log("positionAcc: " + position.coords.accuracy );
-  //   return position;
+    if (markerType !== "Fire") {newMarkerPlot.icon = policeIcon}
     
-  // }
-
-  // function lost(){}
+    newMarkerPlot.addTo(map);
   
-  // navigator.geolocation.watchPosition( doGeo, lost, {maximumAge:0,enableHighAccuracy:true} );
+    return newMarker;
+    return markerType;
+  
 
+  }
 
 
 

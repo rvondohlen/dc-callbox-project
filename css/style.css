@@ -20,6 +20,60 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato';
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin: 0 0 3px 0;
+  font-size: 1.3em;
+}
+
+h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.600rem;
+}
+
+h3 {
+  font-size: 0.500rem;
+  opacity: .8;
+}
+
+.marker-title, .marker-description {
+  text-transform: uppercase;
+  margin: 0px;
+  letter-spacing: .2em;
+  line-height: 15px;
+  margin: 8px;
+}
+
+.marker-title {
+  font-size: 0.600rem;
+}
+
+.marker-description {
+  font-size: 0.300rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: color .25s;
+  transition: color .25s;
+}
+
+a:hover {
+  color: #eb6142;
+}
+
 .pull-left {
   float: left;
 }
@@ -33,11 +87,6 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: #f9f9eb;
-}
-
-.fancy-border {
-  margin: 2px;
-  border: 2px solid #46453a;
 }
 
 section {
@@ -167,195 +216,6 @@ a {
   border-radius: 2px;
 }
 
-article:hover .information {
-  background-color: white;
-}
-
-#map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right {
-  display: none;
-}
-
-#map {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #46453a;
-  border-radius: 2px;
-}
-
-.wax-legend {
-  display: none;
-}
-
-#edit-toggle {
-  position: fixed;
-  right: 23px;
-  top: 27px;
-  width: 200px;
-  height: 30px;
-  text-align: center;
-  border-radius: 2px;
-  border: 2px solid #46453a;
-  background-color: rgba(255, 255, 255, 0.7);
-  font-family: Lato;
-  font-size: 0.600rem;
-  letter-spacing: 0.2em;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: .9rem;
-}
-#edit-toggle a {
-  width: 100%;
-  height: 100%;
-  display: block;
-  padding-top: 5px;
-  color: #46453a;
-  font-weight: bold;
-}
-#edit-toggle a:hover {
-  color: #eb6142;
-}
-
-.leaflet-control-zoom {
-  display: none;
-}
-
-#add:hover {
-  background-color: #f8f8f8;
-  cursor: pointer;
-}
-
-.leaflet-bar {
-  border-radius: 2px;
-  border: 2px solid #46453a;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.leaflet-popup-content-wrapper {
-  background-color: #fefefe;
-  border-radius: 0px;
-  text-align: center;
-  max-width: 175px;
-}
-
-.leaflet-marker-pane img {
-  opacity: 0.7;
-  -webkit-transition: opacity .15s ease;
-  transition: opacity .15s ease;
-}
-
-.leaflet-marker-pane img:hover {
-  opacity: 0.9;
-}
-
-@-webkit-keyframes shake {
-  0% {
-    margin-left: -10px;
-    margin-top: -33px;
-  }
-
-  33% {
-    margin-left: -13px;
-    margin-top: -31px;
-  }
-
-  66% {
-    margin-left: -10px;
-    margin-top: -33px;
-  }
-
-  100% {
-    margin-left: -13px;
-    margin-top: -29px;
-  }
-}
-.leaflet-marker-pane img.leaflet-marker-draggable {
-  opacity: 0.4;
-}
-
-.leaflet-marker-pane img.leaflet-marker-draggable:hover {
-  display: inline-block;
-  -webkit-animation-name: shake;
-  -webkit-animation-duration: 0.1s;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-}
-
-.leaflet-popup-content-wrapper {
-  width: 320px;
-  text-align: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato';
-}
-
-h1 {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .1em;
-  margin: 0 0 3px 0;
-  font-size: 1.3em;
-}
-
-h2, h3 {
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  margin: 0;
-}
-
-h2 {
-  font-size: 0.600rem;
-}
-
-h3 {
-  font-size: 0.500rem;
-  opacity: .8;
-}
-
-.marker-title, .marker-description {
-  text-transform: uppercase;
-  margin: 0px;
-  letter-spacing: .2em;
-  line-height: 15px;
-  margin: 8px;
-}
-
-.marker-title {
-  font-size: 0.600rem;
-}
-
-.marker-description {
-  font-size: 0.300rem;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  -webkit-transition: color .25s;
-  transition: color .25s;
-}
-
-a:hover {
-  color: #eb6142;
-}
-
-@media all and (max-width: 620px) {
-  body {
-    font-size: 10px;
-  }
-
-  h2, #edit-toggle {
-    font-size: 0.5rem;
-  }
-
-  h3 {
-    font-size: 0.4rem;
-    margin-bottom: 4px;
-  }
-}
-/* We use this to get basic styling on all basic form elements */
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -642,4 +502,101 @@ label.error {
 
 input[type="radio"] {
   margin: 0 15px 5px 25px;
+}
+
+#map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right {
+  display: none;
+}
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #46453a;
+  border-radius: 2px;
+}
+
+.wax-legend {
+  display: none;
+}
+
+.leaflet-control-zoom {
+  display: none;
+}
+
+.leaflet-bar {
+  border-radius: 2px;
+  border: 2px solid #46453a;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #fefefe;
+  border-radius: 0px;
+  text-align: center;
+  max-width: 175px;
+}
+
+.leaflet-marker-pane img {
+  opacity: 0.7;
+  -webkit-transition: opacity .15s ease;
+  transition: opacity .15s ease;
+}
+
+.leaflet-marker-pane img:hover {
+  opacity: 0.9;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    margin-left: -10px;
+    margin-top: -33px;
+  }
+
+  33% {
+    margin-left: -13px;
+    margin-top: -31px;
+  }
+
+  66% {
+    margin-left: -10px;
+    margin-top: -33px;
+  }
+
+  100% {
+    margin-left: -13px;
+    margin-top: -29px;
+  }
+}
+.leaflet-marker-pane img.leaflet-marker-draggable {
+  opacity: 0.4;
+}
+
+.leaflet-marker-pane img.leaflet-marker-draggable:hover {
+  display: inline-block;
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 0.1s;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 320px;
+  text-align: left;
+}
+
+@media all and (max-width: 620px) {
+  body {
+    font-size: 10px;
+  }
+
+  h2, #edit-toggle {
+    font-size: 0.5rem;
+  }
+
+  h3 {
+    font-size: 0.4rem;
+    margin-bottom: 4px;
+  }
 }
