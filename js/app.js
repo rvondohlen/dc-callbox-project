@@ -21,7 +21,7 @@ var markerPrototype = {
 };
 
 
-// attributes for each marker
+// attributes for each marker icon style
 var fireIcon = L.icon({
   iconUrl: 'images/marker-fire.svg',
   iconSize: [24, 32],
@@ -34,7 +34,6 @@ var policeIcon = L.icon({
   iconUrl: 'images/marker-police.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
-  // distance of tooltip from anchor
   popupAnchor: [0,-25]
 });
 
@@ -90,7 +89,7 @@ featureLayer.loadURL('callboxes.geojson');
 //    saves data as attributes of object, pushes to tempGeoJSON and displays
  
 
-// adding a custom add button
+// adding a custom add button and info button
 
   var main = document.getElementById('main');
 
@@ -136,7 +135,8 @@ featureLayer.loadURL('callboxes.geojson');
 
   var formWell = document.createElement('div');
       formWell.id="form-well";
-      formWell.innerHTML = '<form action=""><label>Intersection (optional)</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"><br /><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire">Fire<input type="radio" name="type" value="Police">Police<br /><input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken :(</form>';
+      formWell.innerHTML = '<form action=""><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire"><img src="images/marker-fire.svg" alt="" />Fire<input type="radio" name="type" value="Police"><img src="images/marker-police.svg" alt="" />Police<br /><label>Intersection (optional)</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"></form>';
+      // for later : <input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken
 
   // setup
   var setup= function () {
@@ -144,9 +144,8 @@ featureLayer.loadURL('callboxes.geojson');
     navRight.appendChild(moreInfoBtn);
   }
   setup();
-  // 1. 
-  
 
+  // 1. 
   editMapBtn.onclick= function (){
     console.log('entering edit mode..')
 
@@ -159,7 +158,7 @@ featureLayer.loadURL('callboxes.geojson');
     main.appendChild(crosshairs);
 
   }
-  
+  // escape hatch
   cancelBtn.onclick= function () {
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
@@ -168,9 +167,6 @@ featureLayer.loadURL('callboxes.geojson');
     setup();
 
   }
-
-  
-
 
   // 2.
   //getting center of map
@@ -181,9 +177,7 @@ featureLayer.loadURL('callboxes.geojson');
     e.preventDefault();
     e.stopPropagation();
     map.locate();
-
     // if it finds that you are outside DC than it should throw an error
-
   };
 
   map.on('locationfound', function(e) {
@@ -221,10 +215,7 @@ featureLayer.loadURL('callboxes.geojson');
 
   }
 
-
-
-
-
+  // escape hatch 2
   backBtn.onclick= function () {
 
     navLeft.removeChild(backBtn);
@@ -238,49 +229,49 @@ featureLayer.loadURL('callboxes.geojson');
   }
   
   // 3. 
-
-  
-
   saveBtn.onclick= function () {
-
-    navLeft.removeChild(backBtn);
-    navCenter.removeChild(saveBtn);
-    main.removeChild(formWell);
-
-    var input = document.getElementsByName('title');
-
-    var markerTitle = input.value;
-    newMarker.properties.title = markerTitle;
-
+    //Getting value of 'type' radio buttons
     var radios = document.getElementsByName('type');
 
     for (var i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
-          // do whatever you want with the checked radio
           var markerType = radios[i].value;
-
-          // only one radio can be logically checked, don't check the rest
+          console.log(markerType);
           break;
       }
     }
+
+    //assigning icon type to radio values      
+    if (markerType == "Police") {
+      var newMarkerIcon = policeIcon;
+    } else if (markerType == "Fire") {
+      var newMarkerIcon = fireIcon;
+    }
+
+    //getting written intersection as title 
+    var input = document.getElementsByName('title');
+
+    var markerTitle = input.value;
+    
+    //priming for newMarker Object
+    newMarker.properties.title = markerTitle;
     newMarker.properties.description = markerType;
      
+    //plotting newMarker 
     var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
-        icon: fireIcon
+        icon: newMarkerIcon
     });
 
-    if (markerType !== "Fire") {newMarkerPlot.icon = policeIcon}
-    
     newMarkerPlot.addTo(map);
+    //this should use the object eventually or better the compiled GeoJSON
+
+    navLeft.removeChild(backBtn);
+    navCenter.removeChild(saveBtn);
+    main.removeChild(formWell);
   
+    setup();
     return newMarker;
-    return markerType;
-  
+
 
   }
-
-
-
-
-
 
