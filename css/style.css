@@ -45,6 +45,7 @@ h2 {
 h3 {
   font-size: 0.500rem;
   opacity: .8;
+  margin-bottom: 3px;
 }
 
 .marker-title, .marker-description {
@@ -71,7 +72,7 @@ a {
 }
 
 a:hover {
-  color: #eb6142;
+  color: #EB6142;
 }
 
 .pull-left {
@@ -106,6 +107,10 @@ section.map-container article {
   margin: 0 auto;
   padding: 2px;
   border: 1px solid #46453a;
+}
+
+#map {
+  background-color: #FCFBF9;
 }
 
 .top-bar {
@@ -154,14 +159,14 @@ section.map-container article {
   height: 30px;
   padding-top: 4px;
   opacity: 0.9;
-  background-color: #7095c6;
+  background-color: #7095C6;
   color: #f9f9eb;
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-radius: 3px;
 }
 
 .btn:hover {
-  color: white;
+  color: #fff;
   opacity: 0.75;
 }
 
@@ -180,7 +185,7 @@ a {
   background-size: 200%;
   background-repeat: no-repeat;
   opacity: 0.6;
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-radius: 24px;
   -webkit-transition: opacity .25s ease-in-out;
   transition: opacity .25s ease-in-out;
@@ -497,7 +502,7 @@ label.error {
   text-align: left;
   background-color: #f9f9eb;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid #fff;
 }
 
 input[type="radio"] {
@@ -562,17 +567,14 @@ form img {
     margin-left: -10px;
     margin-top: -33px;
   }
-
   33% {
     margin-left: -13px;
     margin-top: -31px;
   }
-
   66% {
     margin-left: -10px;
     margin-top: -33px;
   }
-
   100% {
     margin-left: -13px;
     margin-top: -29px;
