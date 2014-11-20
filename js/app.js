@@ -75,204 +75,175 @@ featureLayer.loadURL('callboxes.geojson');
 
 // new marker creation
 
-// 1. hits edit button
-//    --------------------------------
-//    shows cancel, 'place' buttons, and x mark in center of view
-
-// 2. hits 'place'
-//    ----------------------------------------------
-//    gets center of view under X, saves
-//    shows box type picker, back and 'save' buttons
-
-// 3. hits 'save'
-//    ----------------------------------------------------------------------
-//    saves data as attributes of object, pushes to tempGeoJSON and displays
- 
-
-// adding a custom add button and info button
-
-  var main = document.getElementById('main');
-
-  var navLeft = document.getElementById('nav-left');  
-  var navCenter = document.getElementById('nav-center');
-  var navRight = document.getElementById('nav-right');
 
 
 
 
-  //elements
 
-  var editMapBtn =  document.createElement('div');
-      editMapBtn.id="edit-map";
-      editMapBtn.innerHTML = '<a href="#"><div class="icon edit-icon"></div></a>';
+var newMarker = Object.create(markerPrototype);
 
-  var moreInfoBtn =  document.createElement('div');
-      moreInfoBtn.id="more-info";
-      moreInfoBtn.innerHTML = '<a href="#"><div class="icon info-icon"></div></a>';
-
-  var cancelBtn = document.createElement('div');
-      cancelBtn.id="cancel-btn";
-      cancelBtn.innerHTML = '<a href="#">&#8592; Cancel</a>';
-
-  var placeBtn = document.createElement('div');
-      placeBtn.id="place-btn";
-      placeBtn.innerHTML = '<a href="#" class="btn">Place</a>';
-
-  var findBtn = document.createElement('div');
-      findBtn.id= "find-btn";
-      findBtn.innerHTML = '<a href="#">Find Me &#8620;</a>'
-
-  var crosshairs = document.createElement('div');
-      crosshairs.id= "crosshairs";
-
-  var backBtn = document.createElement('div');
-      backBtn.id="back-btn";
-      backBtn.innerHTML = '<a href="#">&#8592; Back</a>';
-
-  var saveBtn = document.createElement('div');
-      saveBtn.id="place-btn";
-      saveBtn.innerHTML = '<a href="#" class="btn">Save</a>';
-
-  var formWell = document.createElement('div');
-      formWell.id="form-well";
-      formWell.innerHTML = '<form action=""><label>Callbox Type</label><hr><input type="radio" name="type" checked="checked" value="Fire"><img src="images/marker-fire.svg" alt="" />Fire<input type="radio" name="type" value="Police"><img src="images/marker-police.svg" alt="" />Police<br /><label>Intersection (optional)</label><hr><input type="text" name="title" placeholder="e.g. 10th St. NW & G St. NW"></form>';
-      // for later : <input type="radio" name="type" value="Fancy">Fancy<input type="radio" name="type" value="Broken">Broken
-
-  // setup
-  var setup= function () {
-    navLeft.appendChild(editMapBtn);
-    navRight.appendChild(moreInfoBtn);
-  }
-  setup();
-
-  // 1. 
-  editMapBtn.onclick= function (){
-    console.log('entering edit mode..')
-
-    navLeft.removeChild(editMapBtn);
-    navRight.removeChild(moreInfoBtn);
-
-    navLeft.appendChild(cancelBtn);
-    navCenter.appendChild(placeBtn);
-    navRight.appendChild(findBtn);
-    main.appendChild(crosshairs);
-
-  }
-  // escape hatch
-  cancelBtn.onclick= function () {
-    navLeft.removeChild(cancelBtn);
-    navCenter.removeChild(placeBtn);
-    navRight.removeChild(findBtn);
-    main.removeChild(crosshairs);
-
-    setup();
-
-  }
-
-  // 2.
-  //getting center of map
-
-  var newMarker = Object.create(markerPrototype);
-  
-  findBtn.onclick = function (e) {
+// should do this using events
+      
+$( "#find-btn" ).onclick = function (e) {
+    console.log('find button clicked')
     e.preventDefault();
     e.stopPropagation();
     map.locate();
-    // if it finds that you are outside DC than it should throw an error
-  };
+    //  LATER: if it finds that you are outside DC than it needs to throw an error
+};
 
-  map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds);
-    navRight.removeChild(findBtn);
+map.on('locationfound', function(e) {
+  map.fitBounds(e.bounds);
+  $( "#find-btn" ).hide();
+});
 
-  });
 
-  placeBtn.onclick= function () {
+
+
+//   placeBtn.onclick= function () {
     
-    var coordsX = map.getSize().x/2;
-    var coordsY = map.getSize().y/2;
-    var centerPos = L.point(coordsX, coordsY);
-    var markerCoords = map.containerPointToLatLng(centerPos);
-    console.log(markerCoords.lat);
-    console.log(markerCoords.lng);
+//     var coordsX = map.getSize().x/2;
+//     var coordsY = map.getSize().y/2;
+//     var centerPos = L.point(coordsX, coordsY);
+//     var markerCoords = map.containerPointToLatLng(centerPos);
+//     console.log(markerCoords.lat);
+//     console.log(markerCoords.lng);
     
-    navLeft.removeChild(cancelBtn);
-    navCenter.removeChild(placeBtn);
-    if (findBtn.parentNode == navRight){
-      navRight.removeChild(findBtn);
-    }
-    main.removeChild(crosshairs);
+//     navLeft.removeChild(cancelBtn);
+//     navCenter.removeChild(placeBtn);
+//     if (findBtn.parentNode == navRight){
+//       navRight.removeChild(findBtn);
+//     }
+//     main.removeChild(crosshairs);
 
-    navLeft.appendChild(backBtn);
-    navCenter.appendChild(saveBtn);
-    main.appendChild(formWell);
+//     navLeft.appendChild(backBtn);
+//     navCenter.appendChild(saveBtn);
+//     main.appendChild(formWell);
 
-    markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+//     markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
 
-    newMarker.geometry.coordinates = markerCoordsPoint;
+//     newMarker.geometry.coordinates = markerCoordsPoint;
 
-    return newMarker;
+//     return newMarker;
 
 
-  }
+//   }
 
-  // escape hatch 2
-  backBtn.onclick= function () {
+//   // escape hatch 2
+//   backBtn.onclick= function () {
 
-    navLeft.removeChild(backBtn);
-    navCenter.removeChild(saveBtn);
-    main.removeChild(formWell);
+//     navLeft.removeChild(backBtn);
+//     navCenter.removeChild(saveBtn);
+//     main.removeChild(formWell);
 
-    navLeft.appendChild(cancelBtn);
-    navCenter.appendChild(placeBtn);
-    main.appendChild(crosshairs);
+//     navLeft.appendChild(cancelBtn);
+//     navCenter.appendChild(placeBtn);
+//     main.appendChild(crosshairs);
 
-  }
+//   }
   
-  // 3. 
-  saveBtn.onclick= function () {
-    //Getting value of 'type' radio buttons
-    var radios = document.getElementsByName('type');
+//   // 3. 
+//   saveBtn.onclick= function () {
+//     //Getting value of 'type' radio buttons
+//     var radios = document.getElementsByName('type');
 
-    for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-          var markerType = radios[i].value;
-          console.log(markerType);
-          break;
-      }
-    }
+//     for (var i = 0, length = radios.length; i < length; i++) {
+//       if (radios[i].checked) {
+//           var markerType = radios[i].value;
+//           console.log(markerType);
+//           break;
+//       }
+//     }
 
-    //assigning icon type to radio values      
-    if (markerType == "Police") {
-      var newMarkerIcon = policeIcon;
-    } else if (markerType == "Fire") {
-      var newMarkerIcon = fireIcon;
-    }
+//     //assigning icon type to radio values      
+//     if (markerType == "Police") {
+//       var newMarkerIcon = policeIcon;
+//     } else if (markerType == "Fire") {
+//       var newMarkerIcon = fireIcon;
+//     }
 
-    //getting written intersection as title 
-    var input = document.getElementsByName('title');
+//     //getting written intersection as title 
+//     var input = document.getElementsByName('title');
 
-    var markerTitle = input.value;
+//     var markerTitle = input.value;
     
-    //priming for newMarker Object
-    newMarker.properties.title = markerTitle;
-    newMarker.properties.description = markerType;
+//     //priming for newMarker Object
+//     newMarker.properties.title = markerTitle;
+//     newMarker.properties.description = markerType;
      
-    //plotting newMarker 
-    var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
-        icon: newMarkerIcon
-    });
+//     //plotting newMarker 
+//     var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
+//         icon: newMarkerIcon
+//     });
 
-    newMarkerPlot.addTo(map);
-    //this should use the object eventually or better the compiled GeoJSON
+//     newMarkerPlot.addTo(map);
+//     //this should use the object eventually or better the compiled GeoJSON
 
-    navLeft.removeChild(backBtn);
-    navCenter.removeChild(saveBtn);
-    main.removeChild(formWell);
+//     navLeft.removeChild(backBtn);
+//     navCenter.removeChild(saveBtn);
+//     main.removeChild(formWell);
   
-    setup();
-    return newMarker;
+//     setup();
+//     return newMarker;
 
 
-  }
+//   }
+
+var app = {};
+
+app.IndexView = Backbone.View.extend({
+    template: _.template($("#index").html()),
+    initialize: function () {
+        this.render();
+    },
+    render: function () {
+        this.$el.html(this.template());
+    }
+});
+
+app.LocationView = Backbone.View.extend({
+    template: _.template($("#location").html()),
+    initialize: function () {
+        this.render();
+    },
+    render: function () {
+      this.$el.html(this.template());
+    }
+});
+  
+app.DetailsView = Backbone.View.extend({
+    template: _.template($("#details").html()),
+    initialize: function () {
+        this.render();
+    },
+    render: function () {
+      this.$el.html(this.template());
+    }
+});
+  
+app.Router = Backbone.Router.extend({
+    routes: {          
+        '': 'indexRoute',
+        'location': 'locationRoute',
+        'details': 'detailsRoute',        
+    },
+
+    indexRoute: function () {
+        var indexView = new app.IndexView();          
+        $("#top-bar").html(indexView.el);
+    },
+    locationRoute: function () {
+        var locationView = new app.LocationView();          
+        $("#top-bar").html(locationView.el);
+    },
+    detailsRoute: function () {
+        var detailsView = new app.DetailsView();          
+        $("#top-bar").html(detailsView.el);
+    }
+});
+
+var appRouter = new app.Router();
+Backbone.history.start();
+
+
 

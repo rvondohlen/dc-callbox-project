@@ -24,38 +24,7 @@
 			</article>
 		</section>
 		<section id="top-bar">
-			<div id="nav-left" class="pull-left">
-				<!-- <div id="edit-map" class="pull-left">
-					<a href="#">
-						<div class="icon edit-icon"></div>
-					</a>
-				</div> -->
-			</div>
-			<div id="nav-center" class="pull-left">
-			</div>
-			<div id="nav-right" class="pull-right">
-				<!-- <div id="more-info" class="pull-right">
-					<a href="#">
-						<div class="icon info-icon"></div>
-					</a>
-				</div> -->
-			</div>
-		</section>
-
-		<section class="bottom-bar">
-				<div class="project-name">	
-					<h3>A historical documentation initiative</h3>
-					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
-					<h2>Washington &#8226; District of Columbia</h2>
-				</div>
-		</section>
-		
-	</div>
-
-	<!-- index template -->	
-	<script type="text/template" id="index">
-		<section id="top-bar">
-			<div id="nav-left" class="pull-left">
+			<!-- <div id="nav-left" class="pull-left">
 				<div id="edit-map" class="pull-left">
 					<a href="#">
 						<div class="icon edit-icon"></div>
@@ -66,43 +35,71 @@
 			</div>
 			<div id="nav-right" class="pull-right">
 				<div id="more-info" class="pull-right">
-					// <a href="#">
-					// 	<div class="icon info-icon"></div>
-					// </a>
-				</div> 
-			</div>
+					<a href="#">
+						<div class="icon info-icon"></div>
+					</a>
+				</div>
+			</div> -->
 		</section>
+
+		<section class="bottom-bar">
+				<div class="project-name">	
+					<h3>A historical documentation initiative</h3>
+					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
+					<h2>Washington &#8226; District of Columbia</h2>
+				</div>
+		</section>
+
+	</div>
+
+	<!-- index template -->	
+	<script type="text/template" id="index">
+		
+		<div id="nav-left" class="pull-left">
+			<div id="edit-map" class="pull-left">
+				<a href="#location">
+					<div class="icon edit-icon"></div>
+				</a>
+			</div>
+		</div>
+		<div id="nav-center" class="pull-left">
+		</div>
+		<div id="nav-right" class="pull-right">
+			<div id="more-info" class="pull-right">
+				<!--<a href="#">
+					<div class="icon info-icon"></div>
+				</a>-->
+			</div> 
+		</div>
+		
 	</script>
 
 	<!-- marker location template template -->	
 	<script type="text/template" id="location">
-		<section id="top-bar">
-			<div id="nav-left" class="pull-left">
-				<a id="cancel-btn" href="#">&#8592; Cancel</a>
-			</div>
-			<div id="nav-center" class="pull-left">
-				<a id="place-btn" href="#" class="btn">Place</a>
-			</div>
-			<div id="nav-right" class="pull-right">
-				<a id= "find-btn" href="#">Find Me &#8620;</a>
-			</div>
-		</section>
-		<div id="crosshairs">
+		
+		<div id="nav-left" class="pull-left">
+			<a id="cancel-btn" href="#">&#8592; Cancel</a>
 		</div>
+		<div id="nav-center" class="pull-left">
+			<a id="place-btn" href="#details" class="btn">Place</a>
+		</div>
+		<div id="nav-right" class="pull-right">
+			<a id="find-btn">Find Me &#8620;</a>
+		</div>
+		<div id="crosshairs"></div>
+
 	</script>
 
 	<!-- marker details template template -->	
 	<script type="text/template" id="details">
-		<section id="top-bar">
-			<div id="nav-left" class="pull-left">
-				<a id="cancel-btn" href="#">&#8592; Cancel</a>
-			</div>
-			<div id="nav-center" class="pull-left">
-				<a id="save-btn" href="#" class="btn">Save</a>
-			</div>
-			<div id="nav-right" class="pull-right">
-			</div>
-		</section>
+		
+		<div id="nav-left" class="pull-left">
+			<a id="cancel-btn" href="#location">&#8592; Cancel</a>
+		</div>
+		<div id="nav-center" class="pull-left">
+			<a id="save-btn" href="#" class="btn">Save</a>
+		</div>
+		<div id="nav-right" class="pull-right"></div>
 		<div id="form-well">
 			<form action="">
 				<label>Callbox Type</label>
