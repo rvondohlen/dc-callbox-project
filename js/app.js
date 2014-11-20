@@ -162,6 +162,7 @@ featureLayer.loadURL('callboxes.geojson');
   cancelBtn.onclick= function () {
     navLeft.removeChild(cancelBtn);
     navCenter.removeChild(placeBtn);
+    navRight.removeChild(findBtn);
     main.removeChild(crosshairs);
 
     setup();

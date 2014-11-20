@@ -113,7 +113,7 @@ section.map-container article {
   background-color: #FCFBF9;
 }
 
-.top-bar {
+#top-bar {
   width: 100%;
   position: absolute;
   top: 0;
@@ -124,20 +124,20 @@ section.map-container article {
   z-index: 1001;
 }
 
-.top-bar #nav-left,
-.top-bar #nav-center,
-.top-bar #nav-right {
+#top-bar #nav-left,
+#top-bar #nav-center,
+#top-bar #nav-right {
   position: relative;
   width: 33.3%;
   min-height: 50px;
   display: block;
 }
 
-.top-bar #nav-left div {
+#top-bar #nav-left div {
   float: left;
 }
 
-.top-bar #nav-right div {
+#top-bar #nav-right div {
   float: right;
 }
 

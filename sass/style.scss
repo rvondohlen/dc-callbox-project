@@ -141,7 +141,7 @@ section.map-container {
 }
 
 
-.top-bar {
+#top-bar {
 	width:100%;
 	position: absolute;
 	top:0;
@@ -154,9 +154,9 @@ section.map-container {
 	z-index:1001;
 }
 
-.top-bar #nav-left,
-.top-bar #nav-center,
-.top-bar #nav-right {
+#top-bar #nav-left,
+#top-bar #nav-center,
+#top-bar #nav-right {
 	position:relative;
 	width:33.3%;
 	min-height: 50px;
@@ -164,15 +164,15 @@ section.map-container {
 
 }
 
-.top-bar #nav-left div {
+#top-bar #nav-left div {
 	float:left;
 }
 
-.top-bar #nav-center div {
+#top-bar #nav-center div {
 		
 }
 
-.top-bar #nav-right div{
+#top-bar #nav-right div{
 	float:right;
 }
 
