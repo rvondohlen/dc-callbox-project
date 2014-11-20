@@ -119,7 +119,7 @@ featureLayer.loadURL('callboxes.geojson');
       placeBtn.innerHTML = '<a href="#" class="btn">Place</a>';
 
   var findBtn = document.createElement('div');
-      findBtn.id= "findBtn";
+      findBtn.id= "find-btn";
       findBtn.innerHTML = '<a href="#">Find Me &#8620;</a>'
 
   var crosshairs = document.createElement('div');

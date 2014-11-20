@@ -80,8 +80,70 @@
 		</footer> -->
 	</div>
 
-	<!-- index.nav template -->	
+	<!-- index template -->	
+	<script type="text/template" id="index">
+		<section id="top-bar">
+			<div id="nav-left" class="pull-left">
+				<div id="edit-map" class="pull-left">
+					<a href="#">
+						<div class="icon edit-icon"></div>
+					</a>
+				</div>
+			</div>
+			<div id="nav-center" class="pull-left">
+			</div>
+			<div id="nav-right" class="pull-right">
+				<div id="more-info" class="pull-right">
+					// <a href="#">
+					// 	<div class="icon info-icon"></div>
+					// </a>
+				</div> 
+			</div>
+		</section>
+	</script>
 
+	<!-- marker location template template -->	
+	<script type="text/template" id="location">
+		<section id="top-bar">
+			<div id="nav-left" class="pull-left">
+				<a id="cancel-btn" href="#">&#8592; Cancel</a>
+			</div>
+			<div id="nav-center" class="pull-left">
+				<a id="place-btn" href="#" class="btn">Place</a>
+			</div>
+			<div id="nav-right" class="pull-right">
+				<a id= "find-btn" href="#">Find Me &#8620;</a>
+			</div>
+		</section>
+		<div id="crosshairs">
+		</div>
+	</script>
+
+	<!-- marker details template template -->	
+	<script type="text/template" id="details">
+		<section id="top-bar">
+			<div id="nav-left" class="pull-left">
+				<a id="cancel-btn" href="#">&#8592; Cancel</a>
+			</div>
+			<div id="nav-center" class="pull-left">
+				<a id="save-btn" href="#" class="btn">Save</a>
+			</div>
+			<div id="nav-right" class="pull-right">
+			</div>
+		</section>
+		<div id="form-well">
+			<form action="">
+				<label>Callbox Type</label>
+				<hr>
+				<input type="radio" name="type" checked="checked" value="Fire"><img src="images/marker-fire.svg" alt="">Fire
+				<input type="radio" name="type" value="Police"><img src="images/marker-police.svg" alt="">Police
+				<br>
+				<label>Intersection (optional)</label>
+				<hr>
+				<input type="text" name="title" placeholder="e.g. 10th St. NW &amp; G St. NW">
+			</form>
+		</div>
+	</script>
 
 	<script src="js/jquery.js"></script>
     <script src="js/underscore.js"></script>
