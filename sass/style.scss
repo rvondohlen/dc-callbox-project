@@ -25,7 +25,7 @@ body {
 	color: $black;
 	overflow:hidden;
 	text-overflow: hidden;
-	text-align: center;
+	//text-align: center;
 	padding:5px;
 }
 
@@ -172,8 +172,8 @@ section.map-container {
 		
 }
 
-#top-bar #nav-right div{
-	float:right;
+#top-bar #nav-right{
+	text-align: right;
 }
 
 #edit-map,#more-info {
@@ -181,7 +181,7 @@ section.map-container {
 	height: 100%;
 }
 
-#nav-center #place-btn {
+#nav-center #place-btn, #nav-center #save-btn {
 	width:100%;
 }
 
@@ -194,6 +194,7 @@ section.map-container {
 	height: 30px;
 	padding-top: 4px;
 	opacity: 0.9;
+	text-align: center;
 
 	background-color:$blue;
 	
@@ -255,7 +256,7 @@ a {
 	position: absolute;
 	bottom:8px;
 	margin:15px auto;
-	
+	text-align: center;
 	z-index:1001;
 }
 
