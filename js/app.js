@@ -50,13 +50,13 @@ var featureLayer = L.mapbox.featureLayer();
     
 // referencing above attributes for marker styles 
 featureLayer.on('layeradd', function(e) {
-    var marker = e.layer,
-     feature = marker.feature;
+  var marker = e.layer,
+   feature = marker.feature;
 
-    if( feature.properties.description === 'Police'){
-      marker.setIcon(policeIcon);
-    }
-    else{marker.setIcon(fireIcon);}
+  if( feature.properties.description === 'Police'){
+    marker.setIcon(policeIcon);
+  }
+  else{marker.setIcon(fireIcon);}
 });
 
 //hover functionality for marker tooltips
@@ -72,24 +72,16 @@ featureLayer.on('layeradd', function(e) {
 featureLayer.loadURL('callboxes.geojson');
 
 
-
 // new marker creation
-
-
-
-
-
-
 var newMarker = Object.create(markerPrototype);
 
-// should do this using events
-      
+// should do this using events      
 $( "#find-btn" ).onclick = function (e) {
     console.log('find button clicked')
     e.preventDefault();
     e.stopPropagation();
     map.locate();
-    //  LATER: if it finds that you are outside DC than it needs to throw an error
+    // LATER: if it nds that you are outside DC than it needs to throw an error
 };
 
 map.on('locationfound', function(e) {
@@ -97,97 +89,7 @@ map.on('locationfound', function(e) {
   $( "#find-btn" ).hide();
 });
 
-
-
-
-//   placeBtn.onclick= function () {
-    
-//     var coordsX = map.getSize().x/2;
-//     var coordsY = map.getSize().y/2;
-//     var centerPos = L.point(coordsX, coordsY);
-//     var markerCoords = map.containerPointToLatLng(centerPos);
-//     console.log(markerCoords.lat);
-//     console.log(markerCoords.lng);
-    
-//     navLeft.removeChild(cancelBtn);
-//     navCenter.removeChild(placeBtn);
-//     if (findBtn.parentNode == navRight){
-//       navRight.removeChild(findBtn);
-//     }
-//     main.removeChild(crosshairs);
-
-//     navLeft.appendChild(backBtn);
-//     navCenter.appendChild(saveBtn);
-//     main.appendChild(formWell);
-
-//     markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
-
-//     newMarker.geometry.coordinates = markerCoordsPoint;
-
-//     return newMarker;
-
-
-//   }
-
-//   // escape hatch 2
-//   backBtn.onclick= function () {
-
-//     navLeft.removeChild(backBtn);
-//     navCenter.removeChild(saveBtn);
-//     main.removeChild(formWell);
-
-//     navLeft.appendChild(cancelBtn);
-//     navCenter.appendChild(placeBtn);
-//     main.appendChild(crosshairs);
-
-//   }
-  
-//   // 3. 
-//   saveBtn.onclick= function () {
-//     //Getting value of 'type' radio buttons
-//     var radios = document.getElementsByName('type');
-
-//     for (var i = 0, length = radios.length; i < length; i++) {
-//       if (radios[i].checked) {
-//           var markerType = radios[i].value;
-//           console.log(markerType);
-//           break;
-//       }
-//     }
-
-//     //assigning icon type to radio values      
-//     if (markerType == "Police") {
-//       var newMarkerIcon = policeIcon;
-//     } else if (markerType == "Fire") {
-//       var newMarkerIcon = fireIcon;
-//     }
-
-//     //getting written intersection as title 
-//     var input = document.getElementsByName('title');
-
-//     var markerTitle = input.value;
-    
-//     //priming for newMarker Object
-//     newMarker.properties.title = markerTitle;
-//     newMarker.properties.description = markerType;
-     
-//     //plotting newMarker 
-//     var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
-//         icon: newMarkerIcon
-//     });
-
-//     newMarkerPlot.addTo(map);
-//     //this should use the object eventually or better the compiled GeoJSON
-
-//     navLeft.removeChild(backBtn);
-//     navCenter.removeChild(saveBtn);
-//     main.removeChild(formWell);
-  
-//     setup();
-//     return newMarker;
-
-
-//   }
+// backbone structure 
 
 var app = {};
 
@@ -203,22 +105,91 @@ app.IndexView = Backbone.View.extend({
 
 app.LocationView = Backbone.View.extend({
     template: _.template($("#location").html()),
+    events: {
+      'click #find-btn': 'find',
+      'click #place-btn': 'place',
+
+    },
     initialize: function () {
         this.render();
     },
     render: function () {
       this.$el.html(this.template());
+    },
+    find: function (e) {
+      console.log('find button clicked')
+      e.preventDefault();
+      e.stopPropagation();
+      map.locate();
+    },
+    place: function() {
+      var coordsX = map.getSize().x/2;
+      var coordsY = map.getSize().y/2;
+      var centerPos = L.point(coordsX, coordsY);
+      var markerCoords = map.containerPointToLatLng(centerPos);
+      console.log(markerCoords.lat);
+      console.log(markerCoords.lng);
+
+      markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+
+      newMarker.geometry.coordinates = markerCoordsPoint;
+
+      return newMarker;
     }
+
 });
   
 app.DetailsView = Backbone.View.extend({
     template: _.template($("#details").html()),
+    events: {
+        'click #save-btn': 'create',
+    },
     initialize: function () {
         this.render();
     },
     render: function () {
       this.$el.html(this.template());
+    },
+    create: function() {
+      //Getting value of 'type' radio buttons
+      var radios = document.getElementsByName('type');
+
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            var markerType = radios[i].value;
+            console.log(markerType);
+            break;
+        }
+      }
+
+      //assigning icon type to radio values      
+      if (markerType == "Police") {
+        var newMarkerIcon = policeIcon;
+      } else if (markerType == "Fire") {
+        var newMarkerIcon = fireIcon;
+      }
+
+      //getting written intersection as title 
+      var input = document.getElementsByName('title');
+
+      var markerTitle = input.value;
+      
+      //priming for newMarker Object
+      newMarker.properties.title = markerTitle;
+      newMarker.properties.description = markerType;
+       
+      //plotting newMarker 
+      var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
+          icon: newMarkerIcon
+      });
+
+      newMarkerPlot.addTo(map);
+      //this should use the object eventually or better the compiled GeoJSON
+
+      return newMarker;
+      app.navigate("#", {trigger: true});
     }
+    
 });
   
 app.Router = Backbone.Router.extend({
