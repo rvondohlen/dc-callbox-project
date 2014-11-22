@@ -2,7 +2,7 @@
 The District Callbox Project was initiated to map and document the remaining Police and Fire callboxes within the Washington, DC city limits.
 
 ###Implementation
-Utilizes [Tileserver PHP](https://github.com/klokantech/tileserver-php) to serve map tiles made with [Tilemill](https://github.com/mapbox/tilemill) and exported using [MBUtil](https://github.com/mapbox/mbutil). Markers are recorded in GeoJSON and placed with [Mapbox.js](https://github.com/mapbox/mapbox.js/). I'm currently using MAMP for a PHP friendly local environment and ~~Grunt~~ Gulp to compile the SCSS.
+Map and marker placement with [Mapbox.js](https://github.com/mapbox/mapbox.js/). I'm currently using ~~Grunt~~ Gulp to compile.
 
 ###To Do
 - ~~Restyle map~~
