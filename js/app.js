@@ -23,7 +23,7 @@ var markerPrototype = {
 
 // attributes for each marker icon style
 var fireIcon = L.icon({
-  iconUrl: 'images/marker-fire.svg',
+  iconUrl: 'images/fire-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   // distance of tooltip from anchor
@@ -31,7 +31,21 @@ var fireIcon = L.icon({
 });
 
 var policeIcon = L.icon({
-  iconUrl: 'images/marker-police.svg',
+  iconUrl: 'images/police-marker.svg',
+  iconSize: [24, 32],
+  iconAnchor: [12, 32],
+  popupAnchor: [0,-25]
+});
+
+var fancyIcon = L.icon({
+  iconUrl: 'images/fancy-marker.svg',
+  iconSize: [24, 32],
+  iconAnchor: [12, 32],
+  popupAnchor: [0,-25]
+});
+
+var missingIcon = L.icon({
+  iconUrl: 'images/fancy-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   popupAnchor: [0,-25]
@@ -167,6 +181,10 @@ app.DetailsView = Backbone.View.extend({
         var newMarkerIcon = policeIcon;
       } else if (markerType == "Fire") {
         var newMarkerIcon = fireIcon;
+      } else if (markerType == "Fancy") {
+        var newMarkerIcon = fancyIcon;
+      } else if (markerType == "Missing") {
+        var newMarkerIcon = missingIcon;
       }
 
       //getting written intersection as title 

@@ -512,6 +512,7 @@ input[type="radio"] {
 
 form img {
   margin: 0 5px;
+  width: 25px;
 }
 
 #form-well > form > label:nth-child(8) {
