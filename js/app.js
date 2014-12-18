@@ -1,12 +1,7 @@
-//Crockford's Object.create
+//app.js
 
-if (typeof Object.create !== 'function') {
-    Object.create = function (o) {
-        function F() {}
-        F.prototype = o;
-        return new F();
-    };
-}
+
+L.mapbox.accessToken = 'pk.eyJ1IjoicnZvbmRvaGxlbiIsImEiOiJ0WHFyM1hRIn0.YNQ1RlsmSD6hAbSqmif7FA';
 
 var markerPrototype = {
     "type": "Feature",
@@ -20,8 +15,8 @@ var markerPrototype = {
     }
 };
 
-
 // attributes for each marker icon style
+
 var fireIcon = L.icon({
   iconUrl: 'images/fire-marker.svg',
   iconSize: [24, 32],
@@ -45,49 +40,62 @@ var fancyIcon = L.icon({
 });
 
 var missingIcon = L.icon({
-  iconUrl: 'images/fancy-marker.svg',
+  iconUrl: 'images/missing-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   popupAnchor: [0,-25]
 });
 
-// creates map from .mbtiles file
-// actually points to a file inside of that .mbtiles file
-// enabled by tileserver.php, loading nessesary tiles as needed
+//gets mapbox map via api
 var map = L.mapbox.map('map', 'rvondohlen.693pu8fr');
 
 map.setView([38.9013,-77.036],13);
 
-// adding marker layer to map tiles
-var featureLayer = L.mapbox.featureLayer();
-  featureLayer.addTo(map);
-    
-// referencing above attributes for marker styles 
-featureLayer.on('layeradd', function(e) {
-  var marker = e.layer,
-   feature = marker.feature;
+var data;
 
-  if( feature.properties.description === 'Police'){
-    marker.setIcon(policeIcon);
+$.ajax({
+dataType: "json",
+async: false, 
+url: "callboxes.geojson", 
+'success': function (json) {
+     data = json;
+     return data;
+    // Finishes loading before exiting
   }
-  else{marker.setIcon(fireIcon);}
 });
 
-//hover functionality for marker tooltips
+console.log(data); 
 
-// featureLayer.on('mouseover', function(e) {
-//     e.layer.openPopup();
-// });
-// featureLayer.on('mouseout', function(e) {
-//     e.layer.closePopup();
-// });
+var featureLayer;
 
-// makes the .geojson the reference for the marker layer
-featureLayer.loadURL('callboxes.geojson');
+// adding marker layer to map tiles
+var drawLayer = function(){
+  featureLayer = L.mapbox.featureLayer().addTo(map);
+   
+  featureLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+     feature = marker.feature;
+
+    if( feature.properties.description === 'Police'){
+      marker.setIcon(policeIcon);
+    }else if( feature.properties.description === 'Fancy'){
+      marker.setIcon(fancyIcon);
+    }else if( feature.properties.description === 'Missing'){
+      marker.setIcon(missingIcon);
+    }
+    else{marker.setIcon(fireIcon);}
+    console.log('I ran');
+  });
+
+  featureLayer.setGeoJSON(data);
+  return featureLayer;
+};
+
+drawLayer();
 
 
-// new marker creation
-var newMarker = Object.create(markerPrototype);
+  var newMarker = Object.create(markerPrototype);
+
 
 // should do this using events      
 $( "#find-btn" ).onclick = function (e) {
@@ -99,13 +107,36 @@ $( "#find-btn" ).onclick = function (e) {
 };
 
 map.on('locationfound', function(e) {
-  map.fitBounds(e.bounds);
+  if( e.latitude > 38.999 || e.latitude < 38.798 ){
+    alert("Hm, doesn't look like you're located within the District.");
+  } else if( e.longitude < -77.120 || e.longitude > -76.907 ) {
+    alert("Hm, doesn't look like you're located within the District.");
+  } else {
+    map.fitBounds(e.bounds);
+  }
+  
   $( "#find-btn" ).hide();
 });
 
-// backbone structure 
+/////////////////
+// Backbone UI // 
+/////////////////
 
 var app = {};
+
+// app.Model = Backbone.Model.extend({
+//   defaults: {
+//     "type": "Feature",
+//     "geometry": {
+//         "type": "Point",
+//         "coordinates": [-77,39]
+//     },
+//     "properties": {
+//         "description": "Fire",
+//         "title": "undedefined"
+//     }
+//   }
+// });
 
 app.IndexView = Backbone.View.extend({
     template: _.template($("#index").html()),
@@ -195,15 +226,15 @@ app.DetailsView = Backbone.View.extend({
       //priming for newMarker Object
       newMarker.properties.title = markerTitle;
       newMarker.properties.description = markerType;
-       
-      //plotting newMarker 
-      var newMarkerPlot = L.marker(new L.LatLng(newMarker.geometry.coordinates[1],newMarker.geometry.coordinates[0]), {
-          icon: newMarkerIcon
-      });
 
-      newMarkerPlot.addTo(map);
-      //this should use the object eventually or better the compiled GeoJSON
+      var numberOfFeatures = data.features.length; 
 
+      data.features[numberOfFeatures] = newMarker;
+
+      featureLayer.clearLayers();
+      drawLayer();
+
+      return data;
       return newMarker;
       app.navigate("#", {trigger: true});
     }
@@ -233,6 +264,5 @@ app.Router = Backbone.Router.extend({
 
 var appRouter = new app.Router();
 Backbone.history.start();
-
 
 
