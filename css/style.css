@@ -113,14 +113,16 @@ section.map-container article {
 }
 
 #top-bar {
-  width: 100%;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
   position: absolute;
   top: 0;
   left: 0;
-  height: 50px;
-  padding: 0 25px;
-  margin-top: 25px;
+  margin: 10px;
+  padding: 10px 25px;
   z-index: 1001;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 #top-bar #nav-left,
@@ -128,8 +130,12 @@ section.map-container article {
 #top-bar #nav-right {
   position: relative;
   width: 33.3%;
-  min-height: 50px;
   display: block;
+}
+
+#top-bar #nav-left,
+#top-bar #nav-right {
+  padding-top: 6px;
 }
 
 #top-bar #nav-left div {
@@ -210,15 +216,21 @@ a {
 
 .bottom-bar {
   position: absolute;
-  bottom: 8px;
-  margin: 15px auto;
+  left: 0;
+  bottom: 0;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 10px 25px;
   text-align: center;
   z-index: 1001;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 .project-name {
   width: 100%;
-  padding-top: 9px;
+  padding-top: 5px;
   border-radius: 2px;
 }
 

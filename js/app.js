@@ -122,6 +122,15 @@ map.on('locationfound', function(e) {
 // Backbone UI // 
 /////////////////
 
+
+// adding an 'enter' keypress plugin
+
+$('input').keypress(function(e){
+  if(e.keyCode === 13){
+    $(this).trigger('enter');
+  }
+});
+
 var app = {};
 
 // app.Model = Backbone.Model.extend({
@@ -188,6 +197,7 @@ app.DetailsView = Backbone.View.extend({
     template: _.template($("#details").html()),
     events: {
         'click #save-btn': 'create',
+        'enter #callbox-title': 'create'
     },
     initialize: function () {
         this.render();
