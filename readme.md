@@ -2,7 +2,9 @@
 The District Callbox Project was initiated to map and document the remaining Police and Fire callboxes within the Washington, DC city limits.
 
 ###Implementation
-Map and marker placement with [Mapbox.js](https://github.com/mapbox/mapbox.js/). I'm currently using ~~Grunt~~ Gulp to compile.
+Map and marker placement with [Mapbox.js](https://github.com/mapbox/mapbox.js/). 
+
+Use 'gulp' to compile and serve.
 
 ###To Do
 - ~~Restyle map~~
