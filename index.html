@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>The District Callbox Project</title>
+
+  	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+  	
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div id="main">
+		<section class="map-container">
+			<article>
+				<div id='map'></div>
+			</article>
+		</section>
+		<section id="top-bar">
+			<!-- <div id="nav-left" class="pull-left">
+				<div id="edit-map" class="pull-left">
+					<a href="#">
+						<div class="icon edit-icon"></div>
+					</a>
+				</div>
+			</div>
+			<div id="nav-center" class="pull-left">
+			</div>
+			<div id="nav-right" class="pull-right">
+				<div id="more-info" class="pull-right">
+					<a href="#">
+						<div class="icon info-icon"></div>
+					</a>
+				</div>
+			</div> -->
+		</section>
+
+		<section class="bottom-bar">
+				<div class="project-name">	
+					<h3>A historical documentation initiative</h3>
+					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
+					<h2>Washington &#8226; District of Columbia</h2>
+				</div>
+		</section>
+
+	</div>
+
+	<!-- index template -->	
+	<script type="text/template" id="index">
+		
+		<div id="nav-left" class="pull-left">
+			<div id="edit-map" class="pull-left">
+				<a href="#location">
+					<div class="icon edit-icon"></div>
+				</a>
+			</div>
+		</div>
+		<div id="nav-center" class="pull-left">
+		</div>
+		<div id="nav-right" class="pull-right">
+			<div id="more-info" class="pull-right">
+				<!--<a href="#">
+					<div class="icon info-icon"></div>
+				</a>-->
+			</div> 
+		</div>
+		
+	</script>
+
+	<!-- marker location template template -->	
+	<script type="text/template" id="location">
+		
+		<div id="nav-left" class="pull-left">
+			<a id="cancel-btn" href="#">&#8592; Cancel</a>
+		</div>
+		<div id="nav-center" class="pull-left">
+			<a id="place-btn" href="#details" class="btn">Place</a>
+		</div>
+		<div id="nav-right" class="pull-right">
+			<a id="find-btn">Find Me &#8620;</a>
+		</div>
+		<div id="crosshairs"></div>
+
+	</script>
+
+	<!-- marker details template template -->	
+	<script type="text/template" id="details">
+		
+		<div id="nav-left" class="pull-left">
+			<a id="cancel-btn" href="#location">&#8592; Cancel</a>
+		</div>
+		<div id="nav-center" class="pull-left">
+			<a id="save-btn" href="#" class="btn">Save</a>
+		</div>
+		<div id="nav-right" class="pull-right"></div>
+		<div id="form-well">
+			<form action="">
+				<label>Callbox Type</label>
+				<hr>
+				<input type="radio" name="type" checked="checked" value="Fire"><img src="images/fire-marker.svg" alt="">Fire
+				<input type="radio" name="type" value="Police"><img src="images/police-marker.svg" alt="">Police
+				<input type="radio" name="type" value="Fancy"><img src="images/fancy-marker.svg" alt="">Fancy
+				<input type="radio" name="type" value="Missing"><img src="images/missing-marker.svg" alt="">Missing
+				<br>
+				<label>Intersection (optional)</label>
+				<hr>
+				<input id="callbox-title" type="text" name="title" placeholder="e.g. 10th St. NW &amp; G St. NW">
+			</form>
+		</div>
+	</script>
+
+	<script src="js/jquery.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/mustache.js"></script>
+
+	<script src='js/app.js'></script>
+ 	<script>
+		window.addEventListener("load",function() {
+			setTimeout(function(){ window.scrollTo(0, 1);}, 0);
+		});
+	</script>
+</body>
+</html>
