@@ -12472,7 +12472,7 @@ var data;
 
 $.ajax({
 dataType: "json",
-async: false, 
+async: false,
 url: "http://megapixelsoftware.com/callboxes/get.php",
 'success': function (json) {
      data = json;
@@ -12482,7 +12482,9 @@ url: "http://megapixelsoftware.com/callboxes/get.php",
   }
 });
 
-console.log(data.features.length);
+console.log(data);
+
+var featureLayer;
 
 var rem = function(id) {
   console.log('delete ' + id);
@@ -12494,16 +12496,16 @@ var rem = function(id) {
        console.log('respose', json);
        // notify on success or failure
        // return data;
+
     }
   });
-}
 
-var featureLayer;
+}
 
 // adding marker layer to map tiles
 var drawLayer = function(){
   featureLayer = L.mapbox.featureLayer().addTo(map);
-   
+
   featureLayer.on('layeradd', function(e) {
     var marker = e.layer,
      feature = marker.feature;
@@ -12516,7 +12518,7 @@ var drawLayer = function(){
       marker.setIcon(missingIcon);
     }
     else{marker.setIcon(fireIcon);}
-    //console.log('I ran');
+    console.log('I ran');
   });
 
   featureLayer.setGeoJSON(data);
@@ -12527,8 +12529,8 @@ var drawLayer = function(){
       // properties declared above are available under `layer.feature.properties
       var id = data.ids[i++];
       var content = '<b>' + layer.feature.properties.title + '</b>' +
-          '<p>' + layer.feature.properties.description + '<\/p>' +
-          '<div style="float:right" onclick="rem('+ id +')">remove</div>';
+          '<p>' + layer.feature.properties.description + '<\/p>';
+          // '<div style="float:right" onclick="rem('+ id +')">remove</div>';
           console.log(id);
 
       layer.bindPopup(content);
@@ -12543,7 +12545,7 @@ drawLayer();
   var newMarker = Object.create(markerPrototype);
 
 
-// should do this using events      
+// should do this using events
 $( "#find-btn" ).onclick = function (e) {
     console.log('find button clicked')
     e.preventDefault();
@@ -12560,15 +12562,13 @@ map.on('locationfound', function(e) {
   } else {
     map.fitBounds(e.bounds);
   }
-  
+
   $( "#find-btn" ).hide();
 });
 
 /////////////////
-// Backbone UI // 
+// Backbone UI //
 /////////////////
-
-
 
 
 // adding an 'enter' keypress plugin
@@ -12632,7 +12632,7 @@ app.LocationView = Backbone.View.extend({
       console.log(markerCoords.lat);
       console.log(markerCoords.lng);
 
-      var markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+      markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
 
       newMarker.geometry.coordinates = markerCoordsPoint;
 
@@ -12640,7 +12640,7 @@ app.LocationView = Backbone.View.extend({
     }
 
 });
-  
+
 app.DetailsView = Backbone.View.extend({
     template: _.template($("#details").html()),
     events: {
@@ -12654,6 +12654,7 @@ app.DetailsView = Backbone.View.extend({
       this.$el.html(this.template());
     },
     create: function() {
+      console.log('add new one');
       //Getting value of 'type' radio buttons
       var radios = document.getElementsByName('type');
 
@@ -12665,7 +12666,7 @@ app.DetailsView = Backbone.View.extend({
         }
       }
 
-      //assigning icon type to radio values      
+      //assigning icon type to radio values
       if (markerType == "Police") {
         var newMarkerIcon = policeIcon;
       } else if (markerType == "Fire") {
@@ -12676,11 +12677,11 @@ app.DetailsView = Backbone.View.extend({
         var newMarkerIcon = missingIcon;
       }
 
-      //getting written intersection as title 
+      //getting written intersection as title
       var input = document.getElementsByName('title');
 
       var markerTitle = input.value;
-      
+
       //priming for newMarker Object
       newMarker.properties.title = markerTitle;
       newMarker.properties.description = markerType;
@@ -12713,30 +12714,32 @@ app.DetailsView = Backbone.View.extend({
       return newMarker;
       app.navigate("#", {trigger: true});
     }
+
 });
-  
+
 app.Router = Backbone.Router.extend({
-    routes: {          
+    routes: {
         '': 'indexRoute',
         'location': 'locationRoute',
-        'details': 'detailsRoute',        
+        'details': 'detailsRoute',
     },
 
     indexRoute: function () {
-        var indexView = new app.IndexView();          
+        var indexView = new app.IndexView();
         $("#top-bar").html(indexView.el);
     },
     locationRoute: function () {
-        var locationView = new app.LocationView();          
+        var locationView = new app.LocationView();
         $("#top-bar").html(locationView.el);
     },
     detailsRoute: function () {
-        var detailsView = new app.DetailsView();          
+        var detailsView = new app.DetailsView();
         $("#top-bar").html(detailsView.el);
     }
 });
 
 var appRouter = new app.Router();
 Backbone.history.start();
+
 
 
