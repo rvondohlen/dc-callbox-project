@@ -111,10 +111,11 @@ var drawLayer = function(){
       // here you call `bindPopup` with a string of HTML you create - the feature
       // properties declared above are available under `layer.feature.properties
       var id = data.ids[i++];
-      var content = '<b>' + layer.feature.properties.title + '</b>' +
+      var content = '<p style="color: #999; font-size: 8px; margin:0;" >ID# ' + id + '<\/p>' +
+          '<b>' + layer.feature.properties.title + '</b>' +
           '<p>' + layer.feature.properties.description + '<\/p>';
           // '<div style="float:right" onclick="rem('+ id +')">remove</div>';
-          console.log(id);
+          //console.log(id);
 
       layer.bindPopup(content);
   });
