@@ -64,7 +64,7 @@ url: "callboxes.geojson",
   }
 });
 
-console.log(data); 
+console.log(data.features.length);
 
 var featureLayer;
 
@@ -84,7 +84,7 @@ var drawLayer = function(){
       marker.setIcon(missingIcon);
     }
     else{marker.setIcon(fireIcon);}
-    console.log('I ran');
+    //console.log('I ran');
   });
 
   featureLayer.setGeoJSON(data);
@@ -121,6 +121,8 @@ map.on('locationfound', function(e) {
 /////////////////
 // Backbone UI // 
 /////////////////
+
+
 
 
 // adding an 'enter' keypress plugin
@@ -184,7 +186,7 @@ app.LocationView = Backbone.View.extend({
       console.log(markerCoords.lat);
       console.log(markerCoords.lng);
 
-      markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
+      var markerCoordsPoint = [markerCoords.lng,markerCoords.lat];
 
       newMarker.geometry.coordinates = markerCoordsPoint;
 
@@ -239,16 +241,18 @@ app.DetailsView = Backbone.View.extend({
 
       var numberOfFeatures = data.features.length; 
 
-      data.features[numberOfFeatures] = newMarker;
+      //data.features[numberOfFeatures] = newMarker;
+      data.features.push( newMarker );
 
       featureLayer.clearLayers();
       drawLayer();
 
-      return data;
-      return newMarker;
-      app.navigate("#", {trigger: true});
+      console.log(data.features.length);
+//      return data;
+//      return newMarker;
+
+//      app.navigate("#", {trigger: true});
     }
-    
 });
   
 app.Router = Backbone.Router.extend({

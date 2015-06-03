@@ -4,7 +4,8 @@ The District Callbox Project was initiated to map and document the remaining Pol
 ###Implementation
 Map and marker placement with [Mapbox.js](https://github.com/mapbox/mapbox.js/). 
 
-Use 'gulp' to compile and serve.
+###Usage
+Use 'gulp' to compile and serve locally.
 
 ###To Do
 - ~~Restyle map~~
@@ -12,7 +13,7 @@ Use 'gulp' to compile and serve.
 - Add historical information on the page
 - Add contact info to the page
 - Potentially integrate photos of callboxes 
-- Add functionality for users to add the boxes they've seen
+- ~~Add functionality for users to add the boxes they've seen~~ Huge thanks to [Danny Kleinman](https://github.com/megapix)
 
 ###Relevant Links
 
