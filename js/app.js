@@ -165,6 +165,19 @@ $('input').keypress(function(e){
 
 var app = {};
 
+
+
+app.editingSwitch = function() {
+  var element = document.getElementById('js-edit');
+  if (window.location.href.indexOf("#") === -1) {
+    element.style.display = "none";
+  } else if(window.location.href.indexOf("#") > -1) {
+    element.style.display = "block";
+  }
+} 
+
+
+
 // app.Model = Backbone.Model.extend({
 //   defaults: {
 //     "type": "Feature",
