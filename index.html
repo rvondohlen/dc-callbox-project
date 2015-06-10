@@ -58,7 +58,7 @@
 		<div id="nav-left" class="pull-left">
 			<div id="edit-map" class="pull-left">
 				<a href="#location">
-					<div class="icon edit-icon"></div>
+					<div id="js-edit" class="icon edit-icon"></div>
 				</a>
 			</div>
 		</div>
@@ -125,6 +125,7 @@
  	<script>
 		window.addEventListener("load",function() {
 			setTimeout(function(){ window.scrollTo(0, 1);}, 0);
+			app.editingSwitch();
 		});
 	</script>
 </body>

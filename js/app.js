@@ -10899,6 +10899,7 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 
 })( window );
 
+
 //     Backbone.js 0.9.2
 
 //     (c) 2010-2012 Jeremy Ashkenas, DocumentCloud Inc.
@@ -12581,6 +12582,19 @@ $('input').keypress(function(e){
 });
 
 var app = {};
+
+
+
+app.editingSwitch = function() {
+  var element = document.getElementById('js-edit');
+  if (window.location.href.indexOf("#") === -1) {
+    element.style.display = "none";
+  } else if(window.location.href.indexOf("#") > -1) {
+    element.style.display = "block";
+  }
+} 
+
+
 
 // app.Model = Backbone.Model.extend({
 //   defaults: {
