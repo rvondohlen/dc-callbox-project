@@ -12440,34 +12440,99 @@ var fireIcon = L.icon({
   iconSize: [24, 32],
   iconAnchor: [12, 32],
   // distance of tooltip from anchor
-  popupAnchor: [0,-25]
+  popupAnchor: [0,-25],
+  className: 'fire-icon'
 });
 
 var policeIcon = L.icon({
-  iconUrl: 'images/police-marker.svg',
+   iconUrl: 'images/police-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
-  popupAnchor: [0,-25]
+  popupAnchor: [0,-25],
+  className: 'police-icon'
 });
 
 var fancyIcon = L.icon({
   iconUrl: 'images/fancy-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
-  popupAnchor: [0,-25]
+  popupAnchor: [0,-25],
+  className: 'fancy-icon'
 });
 
 var missingIcon = L.icon({
   iconUrl: 'images/missing-marker.svg',
   iconSize: [24, 32],
   iconAnchor: [12, 32],
-  popupAnchor: [0,-25]
+  popupAnchor: [0,-25],
+  className: 'missing-icon'
 });
+
+// var fireIcon = L.icon({
+//   iconUrl: 'images/fire-marker.svg',
+//   iconSize: [24, 32],
+//   iconAnchor: [12, 32],
+//   // distance of tooltip from anchor
+//   popupAnchor: [0,-25],
+//   className: 'fire-icon'
+// });
+
+// var policeIcon = L.icon({
+//   iconUrl: 'images/police-marker.svg',
+//   iconSize: [24, 32],
+//   iconAnchor: [12, 32],
+//   popupAnchor: [0,-25],
+//   className: 'police-icon'
+// });
+
+// var fancyIcon = L.icon({
+//   iconUrl: 'images/fancy-marker.svg',
+//   iconSize: [24, 32],
+//   iconAnchor: [12, 32],
+//   popupAnchor: [0,-25],
+//   className: 'fancy-icon'
+// });
+
+// var missingIcon = L.icon({
+//   iconUrl: 'images/missing-marker.svg',
+//   iconSize: [24, 32],
+//   iconAnchor: [12, 32],
+//   popupAnchor: [0,-25],
+//   className: 'missing-icon'
+// });
+
+// var fireDot = L.icon({
+//   iconUrl: 'images/fire-dot.png',
+//   iconSize: [12, 12],
+//   iconAnchor: [6, 6],
+//   popupAnchor: [0,-12]
+// });
+
+// var policeDot = L.icon({
+//   iconUrl: 'images/police-dot.png',
+//   iconSize: [12, 12],
+//   iconAnchor: [6, 6],
+//   popupAnchor: [0,-12]
+// });
+
+// var fancyDot = L.icon({
+//   iconUrl: 'images/fancy-dot.png',
+//   iconSize: [12, 12],
+//   iconAnchor: [6, 6],
+//   popupAnchor: [0,-12]
+// });
+
+// var missingDot = L.icon({
+//   iconUrl: 'images/missing-dot.png',
+//   iconSize: [12, 12],
+//   iconAnchor: [6, 6],
+//   popupAnchor: [0,-12]
+// });
 
 //gets mapbox map via api
 var map = L.mapbox.map('map', 'rvondohlen.693pu8fr');
 
-map.setView([38.9013,-77.036],13);
+map.setView([38.9013,-77.036],14);
 
 var data;
 
@@ -12505,21 +12570,28 @@ var rem = function(id) {
 
 // adding marker layer to map tiles
 var drawLayer = function(){
+  
   featureLayer = L.mapbox.featureLayer().addTo(map);
 
   featureLayer.on('layeradd', function(e) {
     var marker = e.layer,
      feature = marker.feature;
 
-    if( feature.properties.description === 'Police'){
-      marker.setIcon(policeIcon);
-    }else if( feature.properties.description === 'Fancy'){
-      marker.setIcon(fancyIcon);
-    }else if( feature.properties.description === 'Missing'){
-      marker.setIcon(missingIcon);
-    }
-    else{marker.setIcon(fireIcon);}
-    console.log('I ran');
+     var currentZoom = map.getZoom();
+
+     
+        if( feature.properties.description === 'Police'){
+          marker.setIcon(policeIcon);
+        }else if( feature.properties.description === 'Fancy'){
+          marker.setIcon(fancyIcon);
+        }else if( feature.properties.description === 'Missing'){
+          marker.setIcon(missingIcon);
+        }
+        else{marker.setIcon(fireIcon);}
+     
+
+    
+    
   });
 
   featureLayer.setGeoJSON(data);
@@ -12553,7 +12625,6 @@ $( "#find-btn" ).onclick = function (e) {
     e.preventDefault();
     e.stopPropagation();
     map.locate();
-    // LATER: if it nds that you are outside DC than it needs to throw an error
 };
 
 map.on('locationfound', function(e) {
@@ -12566,6 +12637,44 @@ map.on('locationfound', function(e) {
   }
 
   $( "#find-btn" ).hide();
+});
+
+map.on('zoomend', function(event) {
+    var zoomLevel = map.getZoom();
+    if (zoomLevel < 14){
+      
+          $(".fire-icon").attr("src","images/fire-dot.png");
+          $(".fancy-icon").attr("src","images/fancy-dot.png");
+          $(".police-icon").attr("src","images/police-dot.png");
+          $(".missing-icon").attr("src","images/missing-dot.png");
+      
+      if ( zoomLevel === 13 ) {
+        $( ".leaflet-marker-icon" ).each(function() {
+          $(this).height(10);
+          $(this).width(10);
+          $(this).css({ 'margin-top': '-5px' });
+          $(this).css({ 'margin-left': '-5px' });
+        });
+      } else if ( zoomLevel === 12 ) {
+        $( ".leaflet-marker-icon" ).each(function() {
+          $(this).height(8);
+          $(this).width(8);
+          $(this).css({ 'margin-top': '-4px' });
+          $(this).css({ 'margin-left': '-4px' });
+        });
+      }
+    } else {
+      $(".fire-icon").attr("src","images/fire-marker.svg");
+      $(".fancy-icon").attr("src","images/fancy-marker.svg");
+      $(".police-icon").attr("src","images/police-marker.svg");
+      $(".missing-icon").attr("src","images/missing-marker.svg");  
+      $( ".leaflet-marker-icon" ).each(function() {
+          $(this).height(32);
+          $(this).width(24);
+          $(this).css({ 'margin-top': '-32px' });
+          $(this).css({ 'margin-left': '-12px' });
+      });
+    }
 });
 
 /////////////////
