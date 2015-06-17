@@ -7,7 +7,7 @@
 	<title>The District Callbox Project</title>
 
   	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
   	
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	
@@ -44,10 +44,38 @@
 
 		<section class="bottom-bar">
 				<div class="project-name">	
-					<h3>A historical documentation initiative</h3>
+					<!-- <h3>A historical documentation initiative</h3> -->
 					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
-					<h2>Washington &#8226; District of Columbia</h2>
+					<!-- <h2>Washington &#8226; District of Columbia</h2> -->
 				</div>
+		</section>
+
+		<section class="information">
+			<div class="introduction">
+				<p>The District Callbox Project was initiated to documant and map the remaining Police and Fire callboxes within the Washington, DC city limits</p>
+			</div>
+			<div class="what">
+				<h3>What is a callbox?</h3>
+				<p>Before telephones, callboxes were used by police and fire departments as well as by the public, to communicate with emergency personnel. They come in various shapes which were representative of their function.</p>
+			</div>
+			<div class="why">
+				<h3>Why map them?</h3>
+				<p>After a bit of research it seems that no one has a compete survey of the callboxes that currently remain in the district. Though historical maps exist and localized efforts have been made to map restoration projects, this is an effort to bring those together while allowing anyone to learn about these historical artifacts and contribute to their preservation.</p>
+			</div>
+			<div class="help">
+				<h3>How can you get involved?</h3>
+				<p>If you have any corrections, questions, or additional information about call boxes, don't hesitate to reach out.-</p>
+				<p>Though the kinks are still being worked out, open contributions to the map are coming soon. Reach out to the address above if you are interested in early access or would like to help make that happen.</p>
+				ul>
+				<h3>More Information:</h3>
+				<ul>
+					<li><a href="#">Article One</a></li>
+					<li><a href="#">Article Two</a></li>
+					<li><a href="#">Article Three</a></li>
+					<li><a href="#">LOC Image One</a></li>
+					<li><a href="#">LOC Image Two</a></li>
+				</ul>
+			</div>
 		</section>
 
 	</div>
@@ -66,9 +94,9 @@
 		</div>
 		<div id="nav-right" class="pull-right">
 			<div id="more-info" class="pull-right">
-				<!--<a href="#">
+				<a href="#">
 					<div class="icon info-icon"></div>
-				</a>-->
+				</a>
 			</div> 
 		</div>
 		
@@ -102,14 +130,14 @@
 		<div id="nav-right" class="pull-right"></div>
 		<div id="form-well">
 			<form action="">
-				<label>Callbox Type</label>
+				<label>What does the top look like?</label>
 				<hr>
 				<input type="radio" name="type" checked="checked" value="Fire"><img src="images/fire-marker.svg" alt="">Fire
 				<input type="radio" name="type" value="Police"><img src="images/police-marker.svg" alt="">Police
 				<input type="radio" name="type" value="Fancy"><img src="images/fancy-marker.svg" alt="">Fancy
 				<input type="radio" name="type" value="Missing"><img src="images/missing-marker.svg" alt="">Missing
 				<br>
-				<label>Intersection (optional)</label>
+				<label>What is the Intersection</label>
 				<hr>
 				<input id="callbox-title" type="text" name="title" placeholder="e.g. 10th St. NW &amp; G St. NW">
 			</form>

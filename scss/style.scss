@@ -34,6 +34,10 @@ body {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
 
+ :focus {
+ 	outline: none;
+ }
+
 // Typography 
 
 h1, h2, h3, h4, h5, h6 {
@@ -148,10 +152,10 @@ section.map-container {
 	top:0;
 	left:0;
 	margin:10px;
-	padding: 10px 25px;
+	padding: 10px;
 	z-index:1001;
-	background-color: rgba(255,255,255,0.3);
-	border-bottom:1px solid rgba(255,255,255,0.5);
+	// background-color: rgba(255,255,255,0.3);
+	// border-bottom:1px solid rgba(255,255,255,0.5);
 }
 
 #top-bar #nav-left,
@@ -222,8 +226,8 @@ a {
 }
 
 .icon {
-	width: 30px;
-	height: 30px;
+	width: 24px;
+	height: 24px;
 	display:block;
 	margin:-7px auto 0 auto;
 
@@ -231,7 +235,7 @@ a {
 	background-size:200%;
 	background-repeat:no-repeat;
 	opacity:0.6;
-	border: 3px solid $white;
+	//border: 3px solid $white;
 	border-radius:24px;
 
 	-webkit-transition: opacity .25s ease-in-out;
@@ -267,8 +271,8 @@ a {
 	padding: 10px 25px;
 	text-align: center;
 	z-index:1001;
-	background-color: rgba(255,255,255,0.3);
-	border-top:1px solid rgba(255,255,255,0.5);
+	// background-color: rgba(255,255,255,0.3);
+	// border-top:1px solid rgba(255,255,255,0.5);
 }
 
 .project-name {
@@ -590,30 +594,13 @@ form img {
 	opacity:0.9;
 }
 
-@-webkit-keyframes shake {
-	0% { margin-left: -10px; margin-top: -33px; }
-	33% { margin-left: -13px; margin-top: -31px; }
-	66% { margin-left: -10px; margin-top: -33px; }
-	100% { margin-left: -13px; margin-top: -29px; }
-}
-
-.leaflet-marker-pane img.leaflet-marker-draggable {
-	opacity:0.4;
-}
-
-.leaflet-marker-pane img.leaflet-marker-draggable:hover {
-	display: inline-block;
-	-webkit-animation-name: shake;
-	-webkit-animation-duration: 0.1s;
-	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
-}
 
 .leaflet-popup-content-wrapper {
 	width: 320px;
 	text-align: left;
 }
+
+
 
 // Media queries
 
