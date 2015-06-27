@@ -12642,7 +12642,6 @@ map.on('locationfound', function(e) {
 map.on('zoomend', function(event) {
     var zoomLevel = map.getZoom();
     if (zoomLevel < 14){
-      
           $(".fire-icon").attr("src","images/fire-dot.png");
           $(".fancy-icon").attr("src","images/fancy-dot.png");
           $(".police-icon").attr("src","images/police-dot.png");
