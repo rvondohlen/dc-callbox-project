@@ -17,6 +17,14 @@
 </head>
 <body>
 
+	<div class="loader">
+		<div class="loading-wrap">
+			<div class="loading-animation"></div>
+			<h1>The District Callbox Project</h1>
+		</div>	
+		
+	</div>
+
 	<div id="main">
 		<section class="map-container">
 			<article>
@@ -153,8 +161,14 @@
  	<script>
 		window.addEventListener("load",function() {
 			setTimeout(function(){ window.scrollTo(0, 1);}, 0);
+			
 			app.editingSwitch();
+			setTimeout(function() {
+		        $(".loader").fadeOut(900, "linear");
+		    }, 2000);
 		});
+
+</script>
 	</script>
 </body>
 </html>
