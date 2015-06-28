@@ -292,7 +292,7 @@ a {
 	display:block;
 	margin:-7px auto 0 auto;
 
-	background-image: url('/images/icons.png');
+	background-image: url('../images/icons.png');
 	background-size:200%;
 	background-repeat:no-repeat;
 	opacity:0.6;
@@ -320,7 +320,7 @@ a {
 	margin-top: -50px;
 	margin-left: -50px;
 	opacity:0.5;
-	background-image: url('/images/crosshairs.png');
+	background-image: url('../images/crosshairs.png');
 }
 
 .bottom-bar {
@@ -716,7 +716,7 @@ form img {
     width: 106px;
     height: 135px;
     margin: 50px auto;
-    background-image: url('/images/marker-sprite.png');
+    background-image: url('../images/marker-sprite.png');
     background-repeat: no-repeat;
     
     -webkit-animation: loading-animation .75s steps(4) infinite;
