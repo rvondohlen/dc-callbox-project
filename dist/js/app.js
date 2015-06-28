@@ -12867,9 +12867,11 @@ Backbone.history.start();
 
 var openInfo = function() {
   $(".info").fadeIn();
+  $('body').css('overflow', 'scroll');
 }
 var closeInfo = function() {
   $(".info").fadeOut();
+  $('body').css('overflow', 'hidden');
 }
 
 
