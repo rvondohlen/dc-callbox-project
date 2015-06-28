@@ -68,9 +68,52 @@
     to   { opacity: 1; }
 }
 
-// Mixin
+// Loading Interstitial
 
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: #dbdac6;
+	text-align: center;
+}
 
+.loading-wrap {
+	width: 325px;
+	height: 275px;
+	position: relative;
+	top: 45%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin: 0 auto;
+
+}
+
+.loading-wrap {
+	-webkit-animation: fadein 1.5s; 
+       -moz-animation: fadein 1.5s;
+        -ms-animation: fadein 1.5s; 
+         -o-animation: fadein 1.5s; 
+            animation: fadein 1.5s;
+}
+
+.loading-animation {
+    width: 106px;
+    height: 135px;
+    margin: 50px auto;
+    background-image: url('../images/marker-sprite.png');
+    background-repeat: no-repeat;
+    
+    -webkit-animation: loading-animation .75s steps(4) infinite;
+       -moz-animation: loading-animation .75s steps(4) infinite;
+        -ms-animation: loading-animation .75s steps(4) infinite;
+         -o-animation: loading-animation .75s steps(4) infinite;
+            animation: loading-animation .75s steps(4) infinite;
+}
 
 
 // Global styles
@@ -671,59 +714,94 @@ form img {
 		font-size: 10px;
 	}
 
-	h2, #edit-toggle {
-		font-size:0.5rem;
-	}
+	// h2, #edit-toggle {
+	// 	font-size:0.5rem;
+	// }
 
-	h3 {
-		font-size:0.4rem;
-		margin-bottom:4px;
-	}	
+	// h3 {
+	// 	font-size:0.4rem;
+	// 	margin-bottom:4px;
+	// }	
 
 }
 
-// Loading Interstitial
 
-.loader {
-	position: fixed;
+// Info Overlay
+
+.info {
+	display: none;
+	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
 	background-color: #dbdac6;
-	text-align: center;
+	text-align: left;
+	overflow:scroll;
 }
 
-.loading-wrap {
-	width: 325px;
-	height: 275px;
-	position: relative;
-	top: 45%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	margin: 0 auto;
-
-	-webkit-animation: fadein .5s; 
-       -moz-animation: fadein .5s;
-        -ms-animation: fadein .5s; 
-         -o-animation: fadein .5s; 
-            animation: fadein .5s;
+.info-close {
+	width: 50px;
+	height: 50px;
+	position:absolute;
+	top: 0;
+	right: 0;
 }
 
-.loading-animation {
-    width: 106px;
-    height: 135px;
-    margin: 50px auto;
-    background-image: url('../images/marker-sprite.png');
-    background-repeat: no-repeat;
-    
-    -webkit-animation: loading-animation .75s steps(4) infinite;
-       -moz-animation: loading-animation .75s steps(4) infinite;
-        -ms-animation: loading-animation .75s steps(4) infinite;
-         -o-animation: loading-animation .75s steps(4) infinite;
-            animation: loading-animation .75s steps(4) infinite;
+.info-image {
+	display: block;
+	width: 50%;
+	height: 300px;
+	float: left;
+	clear:both;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.info-officer {
+	background-image: url('../images/officer.jpg');
+}
+
+.info-parade {
+	float: right;
+	background-image: url('../images/parade.jpg')
+}
+
+.info-fancy {
+	background-image: url('../images/fancy.jpg')
+}
+
+.info-copy {
+	width: 50%;
+	padding: 75px 20px;
+	max-width: 500px;
+	height: 300px;
+	float: left;
+	a {
+		display: inline;
+		border-bottom: 1px solid $black; 
+	}
+}
+
+.info-why {
+	float: right;
+}
+
+@media all and (max-width: 520px) {
+	
+	.info-image,
+	.info-copy {
+		float:none !important;
+		width: 100%;
+	}
+	.info-copy {
+		padding: 50px 20px;
+		height: 150px;
+		float: left;
+	}
+
 }
 
  

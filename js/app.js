@@ -447,4 +447,12 @@ var appRouter = new app.Router();
 Backbone.history.start();
 
 
+var openInfo = function() {
+  $(".info").fadeIn();
+}
+var closeInfo = function() {
+  $(".info").fadeOut();
+}
+
+
 

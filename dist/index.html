@@ -20,9 +20,28 @@
 	<div class="loader">
 		<div class="loading-wrap">
 			<div class="loading-animation"></div>
-			<h1>The District Callbox Project</h1>
-		</div>	
-		
+			<h1 class="loading-title">The District Callbox Project</h1>
+		</div>
+	</div>
+	<div class="info">
+		<div class="info-close">
+			<a href="" onclick="closeInfo()">close</a>
+		</div>
+		<div class="info-image info-officer"></div>
+		<div class="info-copy info-what">
+			<h3>What is a Callbox?</h3>
+			<p>Before telephones, callboxes were used by police and fire personnel as well as by the public, to communicate with the various centers of emergency communications. They come in various shapes which were representative of their function.</p>
+		</div>
+		<div class="info-image info-parade"></div>
+		<div class="info-copy info-why">
+			<h3>Why map them?</h3>
+			<p>After a bit of research it seems that no one has a compete survey of the callboxes that currently remain in the district. Though historical maps exist and there have been localized efforts to map restoration projects, this is an effort to bring those together while allowing anyone to learn about these historical artifacts and contribute to their preservation.</p>
+		</div>
+		<div class="info-image info-fancy"></div>
+		<div class="info-copy info-how">
+			<h3>What is a Callbox?</h3>
+			<p>If you have any corrections, questions, or additional information about call boxes, don't hesitate to <a href="http://github.com/rvondohlen">reach out</a> .Though the kinks are still being worked out, open contributions to the map are coming soon. Reach out at the address above if you are interested in early access or would like to help make that happen sooner.</p>
+		</div>
 	</div>
 
 	<div id="main">
@@ -57,34 +76,7 @@
 					<!-- <h2>Washington &#8226; District of Columbia</h2> -->
 				</div>
 		</section>
-
-		<section class="information">
-			<div class="introduction">
-				<p>The District Callbox Project was initiated to documant and map the remaining Police and Fire callboxes within the Washington, DC city limits</p>
-			</div>
-			<div class="what">
-				<h3>What is a callbox?</h3>
-				<p>Before telephones, callboxes were used by police and fire departments as well as by the public, to communicate with emergency personnel. They come in various shapes which were representative of their function.</p>
-			</div>
-			<div class="why">
-				<h3>Why map them?</h3>
-				<p>After a bit of research it seems that no one has a compete survey of the callboxes that currently remain in the district. Though historical maps exist and localized efforts have been made to map restoration projects, this is an effort to bring those together while allowing anyone to learn about these historical artifacts and contribute to their preservation.</p>
-			</div>
-			<div class="help">
-				<h3>How can you get involved?</h3>
-				<p>If you have any corrections, questions, or additional information about call boxes, don't hesitate to reach out.-</p>
-				<p>Though the kinks are still being worked out, open contributions to the map are coming soon. Reach out to the address above if you are interested in early access or would like to help make that happen.</p>
-				ul>
-				<h3>More Information:</h3>
-				<ul>
-					<li><a href="#">Article One</a></li>
-					<li><a href="#">Article Two</a></li>
-					<li><a href="#">Article Three</a></li>
-					<li><a href="#">LOC Image One</a></li>
-					<li><a href="#">LOC Image Two</a></li>
-				</ul>
-			</div>
-		</section>
+		
 
 	</div>
 
@@ -102,7 +94,7 @@
 		</div>
 		<div id="nav-right" class="pull-right">
 			<div id="more-info" class="pull-right">
-				<a href="#">
+				<a href="#" onclick="openInfo()">
 					<div class="icon info-icon"></div>
 				</a>
 			</div> 
