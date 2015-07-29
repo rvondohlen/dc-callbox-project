@@ -70,50 +70,50 @@
 
 // Loading Interstitial
 
-.loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background-color: #dbdac6;
-	text-align: center;
-}
+// .loader {
+// 	position: fixed;
+// 	left: 0px;
+// 	top: 0px;
+// 	width: 100%;
+// 	height: 100%;
+// 	z-index: 9999;
+// 	background-color: #dbdac6;
+// 	text-align: center;
+// }
 
-.loading-wrap {
-	width: 325px;
-	height: 275px;
-	position: relative;
-	top: 45%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	margin: 0 auto;
+// .loading-wrap {
+// 	width: 325px;
+// 	height: 275px;
+// 	position: relative;
+// 	top: 45%;
+// 	-webkit-transform: translateY(-50%);
+// 	-ms-transform: translateY(-50%);
+// 	transform: translateY(-50%);
+// 	margin: 0 auto;
 
-}
+// }
 
-.loading-wrap {
-	-webkit-animation: fadein 1.5s; 
-       -moz-animation: fadein 1.5s;
-        -ms-animation: fadein 1.5s; 
-         -o-animation: fadein 1.5s; 
-            animation: fadein 1.5s;
-}
+// .loading-wrap {
+// 	-webkit-animation: fadein 1.5s; 
+//        -moz-animation: fadein 1.5s;
+//         -ms-animation: fadein 1.5s; 
+//          -o-animation: fadein 1.5s; 
+//             animation: fadein 1.5s;
+// }
 
-.loading-animation {
-    width: 106px;
-    height: 135px;
-    margin: 50px auto;
-    background-image: url('../images/marker-sprite.png');
-    background-repeat: no-repeat;
+// .loading-animation {
+//     width: 106px;
+//     height: 135px;
+//     margin: 50px auto;
+//     background-image: url('../images/marker-sprite.png');
+//     background-repeat: no-repeat;
     
-    -webkit-animation: loading-animation .75s steps(4) infinite;
-       -moz-animation: loading-animation .75s steps(4) infinite;
-        -ms-animation: loading-animation .75s steps(4) infinite;
-         -o-animation: loading-animation .75s steps(4) infinite;
-            animation: loading-animation .75s steps(4) infinite;
-}
+//     -webkit-animation: loading-animation .75s steps(4) infinite;
+//        -moz-animation: loading-animation .75s steps(4) infinite;
+//         -ms-animation: loading-animation .75s steps(4) infinite;
+//          -o-animation: loading-animation .75s steps(4) infinite;
+//             animation: loading-animation .75s steps(4) infinite;
+// }
 
 
 // Global styles
@@ -198,7 +198,7 @@ a {
 	-moz-transition: color .25s;
 	-ms-transition: color .25s;
 	-o-transition: color .25s;
-	transition: color .25s;
+	transition: color .25s, background-color .25s;
 }
 
 a:hover {
@@ -254,7 +254,7 @@ section.map-container {
 	width: calc(100% - 20px);
 	height:50px;
 	position: absolute;
-	top:0;
+	top:6px;
 	left:0;
 	margin:10px;
 	padding: 10px;
@@ -267,33 +267,29 @@ section.map-container {
 #top-bar #nav-center,
 #top-bar #nav-right {
 	position:relative;
-	width:33.3%;
+	width: 33.3%;
 	display:block;
 
 }
 
 #top-bar #nav-left,
 #top-bar #nav-right {
-	padding-top:6px;
 }
 
 
-#top-bar #nav-left div {
-	float:left;
-}
 
-#top-bar #nav-center div {
-		
+#top-bar #nav-center {
+	text-align: center;
+	margin: 0 auto;
 }
 
 #top-bar #nav-right{
 	text-align: right;
 }
 
-#edit-map,#more-info {
-	width: 75px;
-	height: 100%;
-}
+
+
+
 
 #nav-center #place-btn, #nav-center #save-btn {
 	transition: all .25s ease;
@@ -307,27 +303,34 @@ section.map-container {
 .btn{
 	width: 90px;
 	height: 30px;
-	padding-top: 4px;
 	opacity: 0.9;
 	text-align: center;
+	padding: 4px 8px;
 
-	background-color:$blue;
+	background-color: rgba(255,255,255,0.5);
 	
-	color: $off-white;
+	color: $black;
+	font-size: 13px;
 
-	border: 3px solid $white;
+	border: 2px solid $white;
 	border-radius:3px;
+
+
 }
 
 .btn:hover {
-	color:$white;
-	opacity: 0.75;
+	background-color: rgba(255,255,255,0.75);
+}
+
+.btn.special-btn {
+	background-color: $blue;
+	color: $white;
+}
+.btn.special-btn:hover{
+	opacity:.8;
 }
 
 a {
-	width: 100%;
-	height: 100%;
-	display: block;
 }
 
 .icon {
@@ -722,18 +725,15 @@ form img {
 	text-align: left;
 	overflow:scroll;
 
-	a {
-		display: inline;
-		border-bottom: 1px solid $black; 
-	}
+	
 }
 
 .info-close {
-	width: 50px;
+	width: 100px;
 	height: 50px;
-	position:absolute;
-	top: 0;
-	right: 0;
+	position:fixed;
+	top: 14px;
+	right: -10px;
 }
 
 .info-image {
@@ -767,6 +767,10 @@ form img {
 	max-width: 500px;
 	height: 300px;
 	float: left;
+	a {
+		display: inline;
+		border-bottom: 1px dotted $black; 
+	}
 	
 }
 
