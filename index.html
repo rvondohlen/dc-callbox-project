@@ -17,15 +17,15 @@
 </head>
 <body>
 
-	<div class="loader">
+	<!-- <div class="loader">
 		<div class="loading-wrap">
 			<div class="loading-animation"></div>
 			<h1 class="loading-title">The District Callbox Project</h1>
 		</div>
-	</div>
+	</div> -->
 	<div class="info">
 		<div class="info-close">
-			<a href="" onclick="closeInfo()">close</a>
+			<a href="#" onclick="closeInfo()" class="btn">&#x2718;&nbsp;&nbsp; Close</a>
 		</div>
 		<div class="info-image info-officer"></div>
 		<div class="info-copy info-what">
@@ -81,23 +81,17 @@
 	</div>
 
 	<!-- index template -->	
+
 	<script type="text/template" id="index">
 		
 		<div id="nav-left" class="pull-left">
-			<div id="edit-map" class="pull-left">
-				<a href="#location">
-					<div id="js-edit" class="icon edit-icon"></div>
-				</a>
-			</div>
+			<a id="edit-map" href="#location" class="btn">&#9998;&nbsp;&nbsp; Edit</a>
+			
 		</div>
 		<div id="nav-center" class="pull-left">
 		</div>
 		<div id="nav-right" class="pull-right">
-			<div id="more-info" class="pull-right">
-				<a href="#" onclick="openInfo()">
-					<div class="icon info-icon"></div>
-				</a>
-			</div> 
+			<a id="more-info" href="#" onclick="openInfo()" class="btn">&#8505;&nbsp;&nbsp; Info</a>
 		</div>
 		
 	</script>
@@ -106,13 +100,13 @@
 	<script type="text/template" id="location">
 		
 		<div id="nav-left" class="pull-left">
-			<a id="cancel-btn" href="#">&#8592; Cancel</a>
+			<a id="cancel-btn" href="#" class="btn">&#8592;&nbsp;&nbsp; Cancel</a>
 		</div>
 		<div id="nav-center" class="pull-left">
-			<a id="place-btn" href="#details" class="btn">Place</a>
+			<a id="place-btn" href="#details" class="btn special-btn">&#x2714;&nbsp;&nbsp; Place</a>
 		</div>
 		<div id="nav-right" class="pull-right">
-			<a id="find-btn">Find Me &#8620;</a>
+			<a id="find-btn" href="#" class="btn">Find Me &nbsp;&nbsp;&#8620;</a>
 		</div>
 		<div id="crosshairs"></div>
 
@@ -122,10 +116,10 @@
 	<script type="text/template" id="details">
 		
 		<div id="nav-left" class="pull-left">
-			<a id="cancel-btn" href="#location">&#8592; Cancel</a>
+			<a id="cancel-btn" href="#location" class="btn">&#8592;&nbsp;&nbsp; Cancel</a>
 		</div>
 		<div id="nav-center" class="pull-left">
-			<a id="save-btn" href="#" class="btn">Save</a>
+			<a id="save-btn" href="#" class="btn special-btn">&#x2714;&nbsp;&nbsp; Save</a>
 		</div>
 		<div id="nav-right" class="pull-right"></div>
 		<div id="form-well">
@@ -155,9 +149,9 @@
 			setTimeout(function(){ window.scrollTo(0, 1);}, 0);
 			
 			app.editingSwitch();
-			setTimeout(function() {
-		        $(".loader").fadeOut(900, "linear");
-		    }, 1200);
+			// setTimeout(function() {
+		 //        $(".loader").fadeOut(900, "linear");
+		 //    }, 1200);
 		});
 
 </script>
