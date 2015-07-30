@@ -70,50 +70,50 @@
 
 // Loading Interstitial
 
-// .loader {
-// 	position: fixed;
-// 	left: 0px;
-// 	top: 0px;
-// 	width: 100%;
-// 	height: 100%;
-// 	z-index: 9999;
-// 	background-color: #dbdac6;
-// 	text-align: center;
-// }
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: #dbdac6;
+	text-align: center;
+}
 
-// .loading-wrap {
-// 	width: 325px;
-// 	height: 275px;
-// 	position: relative;
-// 	top: 45%;
-// 	-webkit-transform: translateY(-50%);
-// 	-ms-transform: translateY(-50%);
-// 	transform: translateY(-50%);
-// 	margin: 0 auto;
+.loading-wrap {
+	width: 325px;
+	height: 275px;
+	position: relative;
+	top: 45%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin: 0 auto;
 
-// }
+}
 
-// .loading-wrap {
-// 	-webkit-animation: fadein 1.5s; 
-//        -moz-animation: fadein 1.5s;
-//         -ms-animation: fadein 1.5s; 
-//          -o-animation: fadein 1.5s; 
-//             animation: fadein 1.5s;
-// }
+.loading-wrap {
+	-webkit-animation: fadein 1.5s; 
+       -moz-animation: fadein 1.5s;
+        -ms-animation: fadein 1.5s; 
+         -o-animation: fadein 1.5s; 
+            animation: fadein 1.5s;
+}
 
-// .loading-animation {
-//     width: 106px;
-//     height: 135px;
-//     margin: 50px auto;
-//     background-image: url('../images/marker-sprite.png');
-//     background-repeat: no-repeat;
+.loading-animation {
+    width: 106px;
+    height: 135px;
+    margin: 50px auto;
+    background-image: url('../images/marker-sprite.png');
+    background-repeat: no-repeat;
     
-//     -webkit-animation: loading-animation .75s steps(4) infinite;
-//        -moz-animation: loading-animation .75s steps(4) infinite;
-//         -ms-animation: loading-animation .75s steps(4) infinite;
-//          -o-animation: loading-animation .75s steps(4) infinite;
-//             animation: loading-animation .75s steps(4) infinite;
-// }
+    -webkit-animation: loading-animation .75s steps(4) infinite;
+       -moz-animation: loading-animation .75s steps(4) infinite;
+        -ms-animation: loading-animation .75s steps(4) infinite;
+         -o-animation: loading-animation .75s steps(4) infinite;
+            animation: loading-animation .75s steps(4) infinite;
+}
 
 
 // Global styles
@@ -714,7 +714,7 @@ form img {
 // Info Overlay
 
 .info {
-	display: none;
+	//display: none;
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -724,6 +724,9 @@ form img {
 	background-color: #dbdac6;
 	text-align: left;
 	overflow:scroll;
+	//opacity: 0;
+	transform: translateY(100%);
+	transition: transform .2s ease-in-out;
 
 	
 }
@@ -732,8 +735,9 @@ form img {
 	width: 100px;
 	height: 50px;
 	position:fixed;
-	top: 14px;
-	right: -10px;
+	top: 26px;
+	right: -13px;
+	z-index: 9999;
 }
 
 .info-image {

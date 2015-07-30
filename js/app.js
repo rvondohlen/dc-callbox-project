@@ -276,7 +276,7 @@ var app = {};
 
 
 app.editingSwitch = function() {
-  var element = document.getElementById('js-edit');
+  var element = document.getElementById('edit-map');
   if (window.location.href.indexOf("#") === -1) {
     element.style.display = "none";
   } else if(window.location.href.indexOf("#") > -1) {
@@ -448,13 +448,14 @@ Backbone.history.start();
 
 
 var openInfo = function() {
-  $(".info").fadeIn();
+  $(".info").velocity({translateY:"0"},200);
   $('body').css('overflow', 'scroll');
-}
+  
+};
 var closeInfo = function() {
-  $(".info").fadeOut();
+  $(".info").velocity({translateY:"100%"},200);
   $('body').css('overflow', 'hidden');
-}
+};
 
 
 
