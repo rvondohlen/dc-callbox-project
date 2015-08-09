@@ -448,12 +448,14 @@ Backbone.history.start();
 
 
 var openInfo = function() {
-  $(".info").velocity({translateY:"0"},200);
+  $("#main").velocity({translateY: "25%", opacity: [0,1]},{ duration:150, queue: false});
+  $(".info").velocity({translateY:"0"},{ duration:100, queue: false});
   $('body').css('overflow', 'scroll');
   
 };
 var closeInfo = function() {
-  $(".info").velocity({translateY:"100%"},200);
+  $("#main").velocity({translateY: "0", opacity: [1,0]},{ duration:150, queue: false});
+  $(".info").velocity({translateY:"-100%"},{ duration:100, queue: false});
   $('body').css('overflow', 'hidden');
 };
 
