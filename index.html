@@ -3,19 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
 	<title>The District Callbox Project</title>
 
-  	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+	<script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
   	
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- Firebase scripts -->
+	<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/geofire/3.2.0/geofire.min.js"></script>
+	<script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
+
 </head>
 <body>
+	<div class="wrapper">
 
 	<div class="loader">
 		<div class="loading-wrap">
@@ -23,10 +32,7 @@
 			<h1 class="loading-title">The District Callbox Project</h1>
 		</div>
 	</div>
-	<div class="info">
-		<div class="info-close">
-			<a href="#" onclick="closeInfo()" class="btn">&#x2718;&nbsp;&nbsp; Close</a>
-		</div>
+	<div id="info" class="hidden">
 		<div class="info-image info-officer"></div>
 		<div class="info-copy info-what">
 			<h3>What is a Callbox?</h3>
@@ -45,116 +51,73 @@
 	</div>
 
 	<div id="main">
-		<section class="map-container">
-			<article>
+			
 				<div id='map'></div>
-			</article>
-		</section>
-		<section id="top-bar">
-			<!-- <div id="nav-left" class="pull-left">
-				<div id="edit-map" class="pull-left">
-					<a href="#">
-						<div class="icon edit-icon"></div>
-					</a>
-				</div>
-			</div>
-			<div id="nav-center" class="pull-left">
-			</div>
-			<div id="nav-right" class="pull-right">
-				<div id="more-info" class="pull-right">
-					<a href="#">
-						<div class="icon info-icon"></div>
-					</a>
-				</div>
-			</div> -->
-		</section>
+			
+		<div id="top-bar"></div>
+		<div class="cover"></div>
+		<div class="note"></div>
+		<div id="crosshairs"></div>
 
-		<section class="bottom-bar">
-				<div class="project-name">	
-					<!-- <h3>A historical documentation initiative</h3> -->
-					<h1 class="title"><a href="#">The District Callbox Project</a></h1>
-					<!-- <h2>Washington &#8226; District of Columbia</h2> -->
-				</div>
-		</section>
+		<div class="marker-types">
+			<div class="type fire-type">
+				<img src="images/fire-marker.svg" alt="">
+				<p>Fire</p>
+			</div>
+			<div class="type police-type">
+				<img src="images/police-marker.svg" alt="">
+				<p>Police</p>
+			</div>
+			<div class="type missing-type">
+				<img src="images/missing-marker.svg" alt="">
+				<p>Missing</p>
+			</div>
+			<div class="type fancy-type">
+				<img src="images/fancy-marker.svg" alt="">
+				<p>Fancy</p>
+			</div>
+
+		</div>
+		<a href="#" id="find-btn" class="find-btn btn"><span>&#8620;</span> Find My Location</a>
 		
 
 	</div>
-
 	<!-- index template -->	
 
 	<script type="text/template" id="index">
-		
-		<div id="nav-left" class="pull-left">
-			<a id="edit-map" href="#location" class="btn">&#9998;&nbsp;&nbsp; Edit</a>
-			
+		<div class="top-bar-home">
+			<h1 class="title"><a href="#">The District Callbox Project</a></h1>
+			<a id="edit-map" href="#location" class="btn btn-square pull-right"><span>&rarr;</span></a>
+			<a id="more-info" onclick="toggleInfo()" class="btn btn-square pull-right"><span>?</span></a>
 		</div>
-		<div id="nav-center" class="pull-left">
-		</div>
-		<div id="nav-right" class="pull-right">
-			<a id="more-info" href="#" onclick="openInfo()" class="btn">&#8505;&nbsp;&nbsp; Info</a>
-		</div>
-		
+	
 	</script>
 
 	<!-- marker location template template -->	
 	<script type="text/template" id="location">
 		
-		<div id="nav-left" class="pull-left">
-			<a id="cancel-btn" href="#" class="btn">&#8592;&nbsp;&nbsp; Cancel</a>
+		<div class="top-bar-location">
+			<a id="cancel-btn" href="#" class="btn btn-half pull-left text-left"><span>&larr;</span> Cancel</a>
+			<a id="place-btn" href="#details" class="btn btn-half pull-right text-right">Place <span>&rarr;</span></a>
 		</div>
-		<div id="nav-center" class="pull-left">
-			<a id="place-btn" href="#details" class="btn special-btn">&#x2714;&nbsp;&nbsp; Place</a>
-		</div>
-		<div id="nav-right" class="pull-right">
-			<a id="find-btn" href="#" class="btn">Find Me &nbsp;&nbsp;&#8620;</a>
-		</div>
-		<div id="crosshairs"></div>
+		
 
 	</script>
 
 	<!-- marker details template template -->	
 	<script type="text/template" id="details">
 		
-		<div id="nav-left" class="pull-left">
-			<a id="cancel-btn" href="#location" class="btn">&#8592;&nbsp;&nbsp; Cancel</a>
+		<div class="top-bar-details">
+			<a id="back-btn" href="#location" class="btn btn-half pull-left text-left"><span>&larr;</span> Back</a>
+			<a id="place-btn" href="#details" class="btn btn-half pull-right text-right">Place <span>&rarr;</span></a>
 		</div>
-		<div id="nav-center" class="pull-left">
-			<a id="save-btn" href="#" class="btn special-btn">&#x2714;&nbsp;&nbsp; Save</a>
-		</div>
-		<div id="nav-right" class="pull-right"></div>
-		<div id="form-well">
-			<form action="">
-				<label>What does the top look like?</label>
-				<hr>
-				<input type="radio" name="type" checked="checked" value="Fire"><img src="images/fire-marker.svg" alt="">Fire
-				<input type="radio" name="type" value="Police"><img src="images/police-marker.svg" alt="">Police
-				<input type="radio" name="type" value="Fancy"><img src="images/fancy-marker.svg" alt="">Fancy
-				<input type="radio" name="type" value="Missing"><img src="images/missing-marker.svg" alt="">Missing
-				<br>
-				<label>What is the Intersection</label>
-				<hr>
-				<input id="callbox-title" type="text" name="title" placeholder="e.g. 10th St. NW &amp; G St. NW">
-			</form>
-		</div>
-	</script>
 
-	<!--<script src="js/jquery.js"></script>
-    <script src="js/underscore.js"></script>
-    <script src="js/backbone.js"></script>
-    <script src="js/mustache.js"></script>-->
+		
+	</script>
 
 	<script src='js/app.js'></script>
- 	<script>
-		window.addEventListener("load",function() {
-			setTimeout(function(){ window.scrollTo(0, 1);}, 0);
-			
-			app.editingSwitch();
-			setTimeout(function() {
-		        $(".loader").fadeOut(900, "linear");
-		    }, 700);
-		});
 
-</script>
-	</script>
+
+	</div>
 </body>
 </html>
