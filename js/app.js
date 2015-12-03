@@ -50,14 +50,6 @@ var featureLayer;
 // Firebase data 
 var base = new Firebase( 'https://sweltering-fire-2275.firebaseio.com/' );
 
-base.authWithOAuthPopup("github", function(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-  }
-});
-
   // pull in static version if firebase call fails
 base.on('child_added', function(snapshot) {
   
