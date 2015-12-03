@@ -84,8 +84,6 @@ base.on('child_added', function(snapshot) {
 
   });
 
-
-
   featureLayer.setGeoJSON(data);
 
 }, function (errorObject) {
