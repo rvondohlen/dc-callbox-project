@@ -60,19 +60,19 @@
 		<div id="crosshairs"></div>
 
 		<div class="marker-types">
-			<div class="type fire-type">
+			<div class="type fire-type" data-type="Fire">
 				<img src="images/fire-marker.svg" alt="">
 				<p>Fire</p>
 			</div>
-			<div class="type police-type">
+			<div class="type police-type" data-type="Police">
 				<img src="images/police-marker.svg" alt="">
 				<p>Police</p>
 			</div>
-			<div class="type missing-type">
+			<div class="type missing-type" data-type="Missing">
 				<img src="images/missing-marker.svg" alt="">
 				<p>Missing</p>
 			</div>
-			<div class="type fancy-type">
+			<div class="type fancy-type" data-type="Fancy">
 				<img src="images/fancy-marker.svg" alt="">
 				<p>Fancy</p>
 			</div>
@@ -87,7 +87,7 @@
 	<script type="text/template" id="index">
 		<div class="top-bar-home">
 			<h1 class="title"><a href="#">The District Callbox Project</a></h1>
-			<a id="edit-map" href="#location" class="btn btn-square pull-right"><span>&rarr;</span></a>
+			<a id="edit-map" href="#location" class="btn btn-square pull-right"><span>&plus;</span></a>
 			<a id="more-info" onclick="toggleInfo()" class="btn btn-square pull-right"><span>?</span></a>
 		</div>
 	
@@ -109,7 +109,7 @@
 		
 		<div class="top-bar-details">
 			<a id="back-btn" href="#location" class="btn btn-half pull-left text-left"><span>&larr;</span> Back</a>
-			<a id="place-btn" href="#details" class="btn btn-half pull-right text-right">Place <span>&rarr;</span></a>
+			<a id="save-btn" href="#" class="btn btn-half pull-right text-right" style="display:none;">Save <span>&rarr;</span></a>
 		</div>
 
 		
