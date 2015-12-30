@@ -188,6 +188,7 @@ h2 {
 h3 {
 	font-size: 11px;
 	opacity: .8;
+	font-weight: bold;
 	margin-bottom: 3px;
 }
 
@@ -862,8 +863,9 @@ form img {
 	width: 100%;
 	height: 100%;
 	z-index: 1000;
-	background-color: #dbdac6;
+	background-color: rgba(219, 218, 198, 0.92	);
 	text-align: left;
+	line-height: 1.4;
 	overflow:scroll;
 	//opacity: 0;
 	transform: translateY(-100%);
@@ -908,20 +910,36 @@ form img {
 }
 
 .info-copy {
-	width: 50%;
+	width: 40%;
 	padding: 60px 30px;
 	max-width: 500px;
 	height: auto;
 	float: left;
+	position: relative;
 	a {
 		display: inline;
 		border-bottom: 1px dotted $black; 
 	}
+	a:hover {
+		color: rgb(55,149,175);
+	}
+
+	h3 {
+		color: #886961;
+	}
 	
 }
 
+.info-what,
+.info-how {
+
+	margin-left: 6%;
+}
+
+
 .info-why {
 	float: right;
+	margin-right: 6%;
 }
 
 @media all and (max-width: 520px) {
@@ -934,6 +952,7 @@ form img {
 	.info-copy {
 		padding: 20px 20px;
 		float: left;
+		margin: 0;
 	}
 
 }
