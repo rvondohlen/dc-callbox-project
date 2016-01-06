@@ -56,9 +56,12 @@ base.on('child_added', function(snapshot) {
   featureLayer = L.mapbox.featureLayer().addTo(map);
   data = snapshot.val();
   datas.push(data);
-  featureLayer.on('click', function(e) {
-    map.panTo(e.layer.getLatLng());
-  });
+  // featureLayer.on('click', function(e) {
+
+  //   var px = e.layer.getLatLng();
+    
+  //   map.setView([px.lat+=0.009, px.lng], 13);
+  // });
   //add in navigation between markers
   featureLayer.on('layeradd', function(e) {
     var marker = e.layer,
@@ -123,7 +126,9 @@ map.on('zoomend', function(event) {
     $(".fancy-icon").attr("src","images/fancy-dot.png");
     $(".police-icon").attr("src","images/police-dot.png");
     $(".missing-icon").attr("src","images/missing-dot.png");
-    
+    $(".leaflet-popup").each(function() {
+      $(this).css({ 'margin-bottom': '-25px' });
+    });
     if ( zoomLevel === 13 ) {
       $( ".leaflet-marker-icon" ).each(function() {
         $(this).height(10);
@@ -143,7 +148,10 @@ map.on('zoomend', function(event) {
     $(".fire-icon").attr("src","images/fire-marker.svg");
     $(".fancy-icon").attr("src","images/fancy-marker.svg");
     $(".police-icon").attr("src","images/police-marker.svg");
-    $(".missing-icon").attr("src","images/missing-marker.svg");  
+    $(".missing-icon").attr("src","images/missing-marker.svg"); 
+    $(".leaflet-popup").each(function() {
+      $(this).css({ 'margin-bottom': '0px' });
+    });
     $( ".leaflet-marker-icon" ).each(function() {
       $(this).height(32);
       $(this).width(24);
@@ -151,6 +159,12 @@ map.on('zoomend', function(event) {
       $(this).css({ 'margin-left': '-12px' });
     });
   }
+});
+
+map.on('popupopen', function(e) {
+    var px = map.project(e.popup._latlng); // find the pixel location on the map where the popup anchor is
+    px.y -= e.popup._container.clientHeight/2 // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+    map.panTo(map.unproject(px),{animate: true}); // pan to new center
 });
 
 /////////////////
