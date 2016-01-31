@@ -4,7 +4,7 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoicnZvbmRvaGxlbiIsImEiOiJ0WHFyM1hRIn0.YNQ1RlsmSD6hAbSqmif7FA';
 var map = L.mapbox.map('map', 'rvondohlen.693pu8fr', {
   zoomControl: false,
-  tileLayer: { detectRetina: true } 
+  tileLayer: { detectRetina: false } 
 }).setView([38.9013,-77.036], 13);
 
 // attributes for each marker icon style
