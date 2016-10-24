@@ -16452,7 +16452,7 @@ map.on('zoomend', function(event) {
 
 map.on('popupopen', function(e) {
     var px = map.project(e.popup._latlng); // find the pixel location on the map where the popup anchor is
-    px.y -= e.popup._container.clientHeight/2 // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+    px.y -= e.popup._container.clientHeight/2; // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
     map.panTo(map.unproject(px),{animate: true}); // pan to new center
 });
 
@@ -16473,7 +16473,7 @@ app.editingSwitch = function() {
   } else if(window.location.href.indexOf("#") > -1) {
     element.style.display = "block";
   }
-} 
+}; 
 
 app.IndexView = Backbone.View.extend({
   template: _.template($("#index").html()),
@@ -16587,7 +16587,7 @@ app.DetailsView = Backbone.View.extend({
     })
     .fail(function() {
       console.log( "Geonames API call failed." );
-      markerData.properties.intersection = ""
+      markerData.properties.intersection = "";
     })
     .always(function() {
       datas.push(markerData);
@@ -16691,7 +16691,7 @@ for (var i = photos.length - 1; i >= 0; i--) {
     '-ms-transform': 'rotate(' + rotation + 'deg)',
     'transform': 'rotate(' + rotation + 'deg)'
   });
-};
+}
 
 var count = photos.length - 1;
 
