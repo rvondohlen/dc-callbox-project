@@ -16683,8 +16683,8 @@ for (var i = photos.length - 1; i >= 0; i--) {
   photos[i].style.zIndex = relZInd;
 
   var rotation = getRandomArbitrary(6, -6);
-  var xMargin = getRandomArbitrary(45, -45);
-  var yMargin = getRandomArbitrary(45, -45);
+  var xMargin = getRandomArbitrary(15, -15);
+  var yMargin = getRandomArbitrary(15, -15);
   $(photos[i]).css({
     '-webkit-transform': 'rotate(' + rotation + 'deg) translateY(' + yMargin + ') translateX(' + xMargin + ')',
     '-moz-transform': 'rotate(' + rotation + 'deg)',
@@ -16705,7 +16705,7 @@ $('.ps-photo').click(function() {
   var newIndex = currentIndex - photos.length;
 
   var rotation = getRandomArbitrary(5, -5);
-  var margin = getRandomArbitrary(25, -25);
+  var margin = getRandomArbitrary(15, -15);
 
   $(this).velocity({
     translateZ: 0,
@@ -16717,10 +16717,12 @@ $('.ps-photo').click(function() {
 
   setTimeout(function() {
     $(topElement).css("z-index", newIndex);
+
     count--;
     if (count == -1) {
       count = photos.length - 1;
     }
+    $('.ps-photo-caption').text($(photos[count]).children().data("id"));
   }, 10);
 
   $(this).velocity({
@@ -16732,6 +16734,6 @@ $('.ps-photo').click(function() {
     duration: 130
   }, "easeInOutCubic");
 
-  $('.ps-photo-caption').text($(photos[count]).children().data("id"));
+  
 
 });
