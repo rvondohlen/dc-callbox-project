@@ -943,6 +943,17 @@ form img {
 
 }
 
+.info-share-btn {
+	height: 38px;
+	width: auto;
+	display: block !important;
+	margin: 0 auto;
+	font-size: 10px;
+	text-align: center;
+	padding: 10px;
+	letter-spacing: 2px;
+}
+
 .info-close {
 	width: 100px;
 	height: 50px;
@@ -968,16 +979,20 @@ form img {
 }
 
 .info-stack {
-	display: block;
-	width: 90%;
-	float: left;
-	margin-left: 5%;
 	position: relative;
+	display: block;
+	width: 100%;
+	float: left;
+	margin: 0 auto;
 	min-height: 500px;
 	// background-color: rgba(0,255,0,0.2);
   	// margin: 100px auto 0 auto;
+}
 
-	
+.info-stack-holder{
+	position: relative;
+	width: 300px;
+	margin: 30px auto 0 auto;
 }
 
 .info-copy {
@@ -1014,9 +1029,9 @@ form img {
 	
 }
 
-// .info-copy-secondary {
-// 	wid
-// }
+.info-copy-secondary {
+ 	clear: both;
+}
 
 @media all and (max-width: 520px) {
 	
@@ -1041,9 +1056,7 @@ form img {
 .ps-photo-stack {
   position: absolute;
   height: auto;
-  width: 50%;
-  top: 0;
-  left: 10%;
+  width: 100%;
 }
 
 .ps-photo-stack:hover {
@@ -1051,19 +1064,20 @@ form img {
 }
 
 .ps-photo {
-  width: 50%;
+  //width: 50%;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
-  left: 0;
+
 }
 
 .ps-photo img {
   width: 100%;
-  max-width: 440px;
+  max-width: 420px;
   min-width: 300px;
   height: auto; 
   margin: 50% auto;
-  transform: translateY(-10%);
+  transform: translateY(-45%);
   border: 7px solid #fefefe;
   border-radius: 1px;
   box-shadow: 3px 4px 9px rgba(0, 50, 50, 0.45);
@@ -1074,7 +1088,7 @@ form img {
   width: 100%;
   height: 50px;
   position: absolute;
-  top: 400px;
+  top: 410px;
   text-align: center;
   color: #877;
 }
