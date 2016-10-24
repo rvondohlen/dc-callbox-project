@@ -211,7 +211,10 @@ app.LocationView = Backbone.View.extend({
     $(".marker-types").fadeOut();
     $(".cover").fadeOut();
     this.render();
-    $("#top-bar").velocity({translateX:"-33.34%"},{ duration:250, easing: "easeInOutCubic"});
+    if( !$("#info").hasClass('hidden') ){
+      toggleInfo();
+    }
+    $("#top-bar").velocity({translateX:"-33.34%"},{ duration:250, easing: "easeOutCubic"});
     $("#crosshairs").fadeIn();
     $(".find-btn").velocity({translateY: "-72px" },"easeInOutCubic");
     $(".note").html("Place the marker using the crosshairs.");
@@ -346,20 +349,22 @@ window.addEventListener("load",function() {
   app.editingSwitch();
   setTimeout(function() {
     $(".loader").fadeOut(700, "linear");
-  }, 500);
+  }, 1340);
 });
 
 // toggling info screen
 var toggleInfo = function() {
   if( $("#info").hasClass('hidden') ){
-    $("#info").velocity({translateY:"0"},{ duration:100});
+    $("#map").velocity({opacity:"0.4"},{ duration:150},{easing:"easeOutCubic"});
+    $("#info").velocity({translateX:"0"},{ duration:150},{easing:"easeOutQuint"});
     $('body').css('overflow', 'scroll'); 
-    $("#more-info").text("X");
+    $("#more-info").html('<span style="font-size:10px;">&#10005;</span>');
     $("#info").toggleClass('hidden');
   } else {
-    $("#info").velocity({translateY:"-100%"},{ duration:100});
+    $("#map").velocity({opacity:"1"},{ duration:150},{easing:"easeOutQuint"});
+    $("#info").velocity({translateX:"100%"},{ duration:150}, {easing:"easeOutQuint"});
     $('body').css('overflow', 'hidden');
-    $("#more-info").text("?");
+    $("#more-info").html('<span>?</span>');
     $("#info").toggleClass('hidden');
   }
 };
@@ -375,4 +380,69 @@ $(".type").click(function(){
   var clickedDiv = $(this);
   clickedDiv.removeClass("inactive");
   clickedDiv.addClass("active");
+});
+
+// info photo stack
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var photos = document.getElementsByClassName("ps-photo");
+
+for (var i = photos.length - 1; i >= 0; i--) {
+  var relZInd = i + 100;
+  photos[i].style.zIndex = relZInd;
+
+  var rotation = getRandomArbitrary(6, -6);
+  var xMargin = getRandomArbitrary(45, -45);
+  var yMargin = getRandomArbitrary(45, -45);
+  $(photos[i]).css({
+    '-webkit-transform': 'rotate(' + rotation + 'deg) translateY(' + yMargin + ') translateX(' + xMargin + ')',
+    '-moz-transform': 'rotate(' + rotation + 'deg)',
+    '-ms-transform': 'rotate(' + rotation + 'deg)',
+    'transform': 'rotate(' + rotation + 'deg)'
+  });
+};
+
+var count = photos.length - 1;
+
+$('.ps-photo-caption').text($(photos[count]).children().data("id"));
+
+
+$('.ps-photo').click(function() {
+
+  var topElement = photos[count];
+  var currentIndex = $(topElement).css("z-index");
+  var newIndex = currentIndex - photos.length;
+
+  var rotation = getRandomArbitrary(5, -5);
+  var margin = getRandomArbitrary(25, -25);
+
+  $(this).velocity({
+    translateZ: 0,
+    translateX: "+500",
+    translateY: "-100",
+  }, {
+    duration: 150
+  }, "easeInOutCubic");
+
+  setTimeout(function() {
+    $(topElement).css("z-index", newIndex);
+    count--;
+    if (count == -1) {
+      count = photos.length - 1;
+    }
+  }, 10);
+
+  $(this).velocity({
+    translateZ: 0,
+    translateX: "-" + margin,
+    translateY: "+" + margin,
+    rotateZ: rotation + "deg"
+  }, {
+    duration: 130
+  }, "easeInOutCubic");
+
+  $('.ps-photo-caption').text($(photos[count]).children().data("id"));
+
 });

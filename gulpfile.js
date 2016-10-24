@@ -34,7 +34,7 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: "./dist"
         },
-        port: 5500
+        port: 8000
     });
 });
 
